@@ -52,6 +52,12 @@
 		BC114E7C18A9C749004D2294 /* BGNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E7B18A9C749004D2294 /* BGNavigationViewController.m */; };
 		BC114E7F18A9C774004D2294 /* BGMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E7E18A9C774004D2294 /* BGMainMenuViewController.m */; };
 		BC114E8218A9C784004D2294 /* BGGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E8118A9C784004D2294 /* BGGameViewController.m */; };
+		BC114E8418A9C99F004D2294 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E8318A9C99F004D2294 /* SpriteKit.framework */; };
+		BC114E8718A9CB05004D2294 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E8618A9CB05004D2294 /* GameScene.m */; };
+		BC114E8D18A9CFED004D2294 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114E8A18A9CFED004D2294 /* bg.png */; };
+		BC114E8E18A9CFED004D2294 /* red-missile.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114E8B18A9CFED004D2294 /* red-missile.png */; };
+		BC114E8F18A9CFED004D2294 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114E8C18A9CFED004D2294 /* Spaceship.png */; };
+		BC114E9218A9D06F004D2294 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E9118A9D06F004D2294 /* GameOverScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +146,14 @@
 		BC114E7E18A9C774004D2294 /* BGMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGMainMenuViewController.m; sourceTree = "<group>"; };
 		BC114E8018A9C784004D2294 /* BGGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGameViewController.h; sourceTree = "<group>"; };
 		BC114E8118A9C784004D2294 /* BGGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGameViewController.m; sourceTree = "<group>"; };
+		BC114E8318A9C99F004D2294 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		BC114E8518A9CB05004D2294 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		BC114E8618A9CB05004D2294 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		BC114E8A18A9CFED004D2294 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		BC114E8B18A9CFED004D2294 /* red-missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-missile.png"; sourceTree = "<group>"; };
+		BC114E8C18A9CFED004D2294 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		BC114E9018A9D06F004D2294 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		BC114E9118A9D06F004D2294 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC114E8418A9C99F004D2294 /* SpriteKit.framework in Frameworks */,
 				BC114E6918A9C607004D2294 /* CoreImage.framework in Frameworks */,
 				BC114E6A18A9C607004D2294 /* CoreText.framework in Frameworks */,
 				BC114E6B18A9C607004D2294 /* iAd.framework in Frameworks */,
@@ -203,6 +218,7 @@
 		BC114C0818A9C28F004D2294 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC114E8318A9C99F004D2294 /* SpriteKit.framework */,
 				BC114E6218A9C607004D2294 /* CoreImage.framework */,
 				BC114E6318A9C607004D2294 /* CoreText.framework */,
 				BC114E6418A9C607004D2294 /* iAd.framework */,
@@ -229,6 +245,7 @@
 		BC114C0F18A9C28F004D2294 /* bitbird-ios */ = {
 			isa = PBXGroup;
 			children = (
+				BC114E8818A9CFED004D2294 /* assets */,
 				BC114E3318A9C4BF004D2294 /* classes */,
 				BC114C5418A9C471004D2294 /* vendor */,
 				BC114C1818A9C28F004D2294 /* BGAppDelegate.h */,
@@ -432,6 +449,10 @@
 		BC114E4A18A9C4BF004D2294 /* game */ = {
 			isa = PBXGroup;
 			children = (
+				BC114E8518A9CB05004D2294 /* GameScene.h */,
+				BC114E8618A9CB05004D2294 /* GameScene.m */,
+				BC114E9018A9D06F004D2294 /* GameOverScene.h */,
+				BC114E9118A9D06F004D2294 /* GameOverScene.m */,
 			);
 			path = game;
 			sourceTree = "<group>";
@@ -452,6 +473,24 @@
 				BC114E7318A9C692004D2294 /* KSNavigationViewController.m */,
 			);
 			name = ksbase;
+			sourceTree = "<group>";
+		};
+		BC114E8818A9CFED004D2294 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				BC114E8918A9CFED004D2294 /* Art */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		BC114E8918A9CFED004D2294 /* Art */ = {
+			isa = PBXGroup;
+			children = (
+				BC114E8A18A9CFED004D2294 /* bg.png */,
+				BC114E8B18A9CFED004D2294 /* red-missile.png */,
+				BC114E8C18A9CFED004D2294 /* Spaceship.png */,
+			);
+			path = Art;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,8 +569,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC114E8F18A9CFED004D2294 /* Spaceship.png in Resources */,
+				BC114E8E18A9CFED004D2294 /* red-missile.png in Resources */,
 				BC114C1418A9C28F004D2294 /* InfoPlist.strings in Resources */,
 				BC114C1C18A9C28F004D2294 /* Images.xcassets in Resources */,
+				BC114E8D18A9CFED004D2294 /* bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +594,7 @@
 			files = (
 				BC114E7818A9C71B004D2294 /* BGBaseViewController.m in Sources */,
 				BC114E4F18A9C4BF004D2294 /* UIImage+Additions.m in Sources */,
+				BC114E9218A9D06F004D2294 /* GameOverScene.m in Sources */,
 				BC114E4E18A9C4BF004D2294 /* NSString+HTML.m in Sources */,
 				BC114E4C18A9C4BF004D2294 /* NSError+Additions.m in Sources */,
 				BC114E1A18A9C472004D2294 /* UIDevice-Reachability.m in Sources */,
@@ -560,6 +603,7 @@
 				BC114C1A18A9C28F004D2294 /* BGAppDelegate.m in Sources */,
 				BC114E5018A9C4BF004D2294 /* UILabel+FlexibleHeight.m in Sources */,
 				BC114E4D18A9C4BF004D2294 /* NSString+Additions.m in Sources */,
+				BC114E8718A9CB05004D2294 /* GameScene.m in Sources */,
 				BC114D8818A9C472004D2294 /* KeychainItemWrapper.m in Sources */,
 				BC114E8218A9C784004D2294 /* BGGameViewController.m in Sources */,
 				BC114E7F18A9C774004D2294 /* BGMainMenuViewController.m in Sources */,

@@ -7,14 +7,18 @@
 //
 
 #import "BGAppDelegate.h"
+#import "BGGameViewController.h"
 
 @implementation BGAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	BGGameViewController *gameVC = [[BGGameViewController alloc] init];
+	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+	self.window.rootViewController = gameVC;
     [self.window makeKeyAndVisible];
     return YES;
 }

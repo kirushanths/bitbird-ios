@@ -28,9 +28,15 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 
 
 @implementation GameScene {
+	UIImageView *background;
+	SKSpriteNode *floor;
 	SKSpriteNode *hero;
 	SKAction *actionTouch;
 	SKAction *actionDeath;
+	
+	SKAction *soundJump;
+	SKAction *soundDeath;
+	SKAction *soundScore;
 	
 	NSTimeInterval _lastUpdateTime;
 	NSTimeInterval _dt;
@@ -42,6 +48,9 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
     if (self = [super initWithSize:size])
 	{
         self.backgroundColor = [SKColor whiteColor];
+		
+		soundJump = [SKAction playSoundFileNamed:@"jump.wav" waitForCompletion:NO];
+		
         [self initalizingScrollingBackground];
         [self addHero];
 		
@@ -152,6 +161,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	hero.physicsBody.velocity = CGVectorMake(0, 250);
+	[hero runAction:soundJump];
 }
 
 -(void)update:(CFTimeInterval)currentTime {

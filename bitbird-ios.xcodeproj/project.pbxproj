@@ -58,6 +58,10 @@
 		BC114E8E18A9CFED004D2294 /* red-missile.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114E8B18A9CFED004D2294 /* red-missile.png */; };
 		BC114E8F18A9CFED004D2294 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114E8C18A9CFED004D2294 /* Spaceship.png */; };
 		BC114E9218A9D06F004D2294 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E9118A9D06F004D2294 /* GameOverScene.m */; };
+		BC114E9718A9E64B004D2294 /* coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC114E9418A9E64B004D2294 /* coin.wav */; };
+		BC114E9818A9E64B004D2294 /* gameover.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC114E9518A9E64B004D2294 /* gameover.wav */; };
+		BC114E9918A9E64B004D2294 /* jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BC114E9618A9E64B004D2294 /* jump.mp3 */; };
+		BC114E9B18A9E74D004D2294 /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC114E9A18A9E74D004D2294 /* jump.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +158,10 @@
 		BC114E8C18A9CFED004D2294 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		BC114E9018A9D06F004D2294 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		BC114E9118A9D06F004D2294 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
+		BC114E9418A9E64B004D2294 /* coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coin.wav; sourceTree = "<group>"; };
+		BC114E9518A9E64B004D2294 /* gameover.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameover.wav; sourceTree = "<group>"; };
+		BC114E9618A9E64B004D2294 /* jump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jump.mp3; sourceTree = "<group>"; };
+		BC114E9A18A9E74D004D2294 /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -470,6 +478,7 @@
 		BC114E8818A9CFED004D2294 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				BC114E9318A9E64B004D2294 /* sounds */,
 				BC114E8918A9CFED004D2294 /* Art */,
 			);
 			path = assets;
@@ -483,6 +492,17 @@
 				BC114E8C18A9CFED004D2294 /* Spaceship.png */,
 			);
 			path = Art;
+			sourceTree = "<group>";
+		};
+		BC114E9318A9E64B004D2294 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				BC114E9418A9E64B004D2294 /* coin.wav */,
+				BC114E9A18A9E74D004D2294 /* jump.wav */,
+				BC114E9518A9E64B004D2294 /* gameover.wav */,
+				BC114E9618A9E64B004D2294 /* jump.mp3 */,
+			);
+			path = sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -562,8 +582,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC114E8F18A9CFED004D2294 /* Spaceship.png in Resources */,
+				BC114E9818A9E64B004D2294 /* gameover.wav in Resources */,
+				BC114E9918A9E64B004D2294 /* jump.mp3 in Resources */,
 				BC114E8E18A9CFED004D2294 /* red-missile.png in Resources */,
 				BC114C1418A9C28F004D2294 /* InfoPlist.strings in Resources */,
+				BC114E9718A9E64B004D2294 /* coin.wav in Resources */,
+				BC114E9B18A9E74D004D2294 /* jump.wav in Resources */,
 				BC114C1C18A9C28F004D2294 /* Images.xcassets in Resources */,
 				BC114E8D18A9CFED004D2294 /* bg.png in Resources */,
 			);

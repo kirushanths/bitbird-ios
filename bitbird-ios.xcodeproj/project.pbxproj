@@ -46,6 +46,12 @@
 		BC114E6D18A9C607004D2294 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E6618A9C607004D2294 /* MobileCoreServices.framework */; };
 		BC114E6E18A9C607004D2294 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E6718A9C607004D2294 /* QuartzCore.framework */; };
 		BC114E6F18A9C607004D2294 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E6818A9C607004D2294 /* Security.framework */; };
+		BC114E7418A9C692004D2294 /* KSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E7118A9C692004D2294 /* KSBaseViewController.m */; };
+		BC114E7518A9C692004D2294 /* KSNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E7318A9C692004D2294 /* KSNavigationViewController.m */; };
+		BC114E7818A9C71B004D2294 /* BGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E7718A9C71B004D2294 /* BGBaseViewController.m */; };
+		BC114E7C18A9C749004D2294 /* BGNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E7B18A9C749004D2294 /* BGNavigationViewController.m */; };
+		BC114E7F18A9C774004D2294 /* BGMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E7E18A9C774004D2294 /* BGMainMenuViewController.m */; };
+		BC114E8218A9C784004D2294 /* BGGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E8118A9C784004D2294 /* BGGameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +128,18 @@
 		BC114E6618A9C607004D2294 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		BC114E6718A9C607004D2294 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BC114E6818A9C607004D2294 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BC114E7018A9C692004D2294 /* KSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSBaseViewController.h; sourceTree = "<group>"; };
+		BC114E7118A9C692004D2294 /* KSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSBaseViewController.m; sourceTree = "<group>"; };
+		BC114E7218A9C692004D2294 /* KSNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSNavigationViewController.h; sourceTree = "<group>"; };
+		BC114E7318A9C692004D2294 /* KSNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSNavigationViewController.m; sourceTree = "<group>"; };
+		BC114E7618A9C71B004D2294 /* BGBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGBaseViewController.h; sourceTree = "<group>"; };
+		BC114E7718A9C71B004D2294 /* BGBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGBaseViewController.m; sourceTree = "<group>"; };
+		BC114E7A18A9C749004D2294 /* BGNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGNavigationViewController.h; sourceTree = "<group>"; };
+		BC114E7B18A9C749004D2294 /* BGNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGNavigationViewController.m; sourceTree = "<group>"; };
+		BC114E7D18A9C774004D2294 /* BGMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGMainMenuViewController.h; sourceTree = "<group>"; };
+		BC114E7E18A9C774004D2294 /* BGMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGMainMenuViewController.m; sourceTree = "<group>"; };
+		BC114E8018A9C784004D2294 /* BGGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGameViewController.h; sourceTree = "<group>"; };
+		BC114E8118A9C784004D2294 /* BGGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +375,15 @@
 		BC114E4118A9C4BF004D2294 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BC114E7918A9C72E004D2294 /* ksbase */,
+				BC114E7618A9C71B004D2294 /* BGBaseViewController.h */,
+				BC114E7718A9C71B004D2294 /* BGBaseViewController.m */,
+				BC114E7A18A9C749004D2294 /* BGNavigationViewController.h */,
+				BC114E7B18A9C749004D2294 /* BGNavigationViewController.m */,
+				BC114E7D18A9C774004D2294 /* BGMainMenuViewController.h */,
+				BC114E7E18A9C774004D2294 /* BGMainMenuViewController.m */,
+				BC114E8018A9C784004D2294 /* BGGameViewController.h */,
+				BC114E8118A9C784004D2294 /* BGGameViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -414,6 +441,17 @@
 			children = (
 			);
 			path = main;
+			sourceTree = "<group>";
+		};
+		BC114E7918A9C72E004D2294 /* ksbase */ = {
+			isa = PBXGroup;
+			children = (
+				BC114E7018A9C692004D2294 /* KSBaseViewController.h */,
+				BC114E7118A9C692004D2294 /* KSBaseViewController.m */,
+				BC114E7218A9C692004D2294 /* KSNavigationViewController.h */,
+				BC114E7318A9C692004D2294 /* KSNavigationViewController.m */,
+			);
+			name = ksbase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,6 +550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC114E7818A9C71B004D2294 /* BGBaseViewController.m in Sources */,
 				BC114E4F18A9C4BF004D2294 /* UIImage+Additions.m in Sources */,
 				BC114E4E18A9C4BF004D2294 /* NSString+HTML.m in Sources */,
 				BC114E4C18A9C4BF004D2294 /* NSError+Additions.m in Sources */,
@@ -522,10 +561,15 @@
 				BC114E5018A9C4BF004D2294 /* UILabel+FlexibleHeight.m in Sources */,
 				BC114E4D18A9C4BF004D2294 /* NSString+Additions.m in Sources */,
 				BC114D8818A9C472004D2294 /* KeychainItemWrapper.m in Sources */,
+				BC114E8218A9C784004D2294 /* BGGameViewController.m in Sources */,
+				BC114E7F18A9C774004D2294 /* BGMainMenuViewController.m in Sources */,
+				BC114E7C18A9C749004D2294 /* BGNavigationViewController.m in Sources */,
 				BC114E1918A9C472004D2294 /* UIDevice-Orientation.m in Sources */,
 				BC114D8D18A9C472004D2294 /* JSONKit.m in Sources */,
 				BC114D8C18A9C472004D2294 /* GTMNSString+HTML.m in Sources */,
+				BC114E7418A9C692004D2294 /* KSBaseViewController.m in Sources */,
 				BC114E5118A9C4BF004D2294 /* UILabel+LatoFont.m in Sources */,
+				BC114E7518A9C692004D2294 /* KSNavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

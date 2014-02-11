@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BC114C0A18A9C28F004D2294 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114C0918A9C28F004D2294 /* Foundation.framework */; };
+		BC114C0C18A9C28F004D2294 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114C0B18A9C28F004D2294 /* CoreGraphics.framework */; };
+		BC114C0E18A9C28F004D2294 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114C0D18A9C28F004D2294 /* UIKit.framework */; };
+		BC114C1418A9C28F004D2294 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC114C1218A9C28F004D2294 /* InfoPlist.strings */; };
+		BC114C1618A9C28F004D2294 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114C1518A9C28F004D2294 /* main.m */; };
+		BC114C1A18A9C28F004D2294 /* BGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114C1918A9C28F004D2294 /* BGAppDelegate.m */; };
+		BC114C1C18A9C28F004D2294 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC114C1B18A9C28F004D2294 /* Images.xcassets */; };
+		BC114C2318A9C28F004D2294 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114C2218A9C28F004D2294 /* XCTest.framework */; };
+		BC114C2418A9C28F004D2294 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114C0918A9C28F004D2294 /* Foundation.framework */; };
+		BC114C2518A9C28F004D2294 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114C0D18A9C28F004D2294 /* UIKit.framework */; };
+		BC114C2D18A9C28F004D2294 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC114C2B18A9C28F004D2294 /* InfoPlist.strings */; };
+		BC114C2F18A9C28F004D2294 /* bitbird_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114C2E18A9C28F004D2294 /* bitbird_iosTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC114C2618A9C28F004D2294 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC114BFE18A9C28F004D2294 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC114C0518A9C28F004D2294;
+			remoteInfo = "bitbird-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BC114C0618A9C28F004D2294 /* bitbird-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bitbird-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC114C0918A9C28F004D2294 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BC114C0B18A9C28F004D2294 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BC114C0D18A9C28F004D2294 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BC114C1118A9C28F004D2294 /* bitbird-ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "bitbird-ios-Info.plist"; sourceTree = "<group>"; };
+		BC114C1318A9C28F004D2294 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BC114C1518A9C28F004D2294 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BC114C1718A9C28F004D2294 /* bitbird-ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bitbird-ios-Prefix.pch"; sourceTree = "<group>"; };
+		BC114C1818A9C28F004D2294 /* BGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGAppDelegate.h; sourceTree = "<group>"; };
+		BC114C1918A9C28F004D2294 /* BGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BGAppDelegate.m; sourceTree = "<group>"; };
+		BC114C1B18A9C28F004D2294 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BC114C2118A9C28F004D2294 /* bitbird-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bitbird-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC114C2218A9C28F004D2294 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BC114C2A18A9C28F004D2294 /* bitbird-iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "bitbird-iosTests-Info.plist"; sourceTree = "<group>"; };
+		BC114C2C18A9C28F004D2294 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BC114C2E18A9C28F004D2294 /* bitbird_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bitbird_iosTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC114C0318A9C28F004D2294 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC114C0C18A9C28F004D2294 /* CoreGraphics.framework in Frameworks */,
+				BC114C0E18A9C28F004D2294 /* UIKit.framework in Frameworks */,
+				BC114C0A18A9C28F004D2294 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC114C1E18A9C28F004D2294 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC114C2318A9C28F004D2294 /* XCTest.framework in Frameworks */,
+				BC114C2518A9C28F004D2294 /* UIKit.framework in Frameworks */,
+				BC114C2418A9C28F004D2294 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC114BFD18A9C28F004D2294 = {
+			isa = PBXGroup;
+			children = (
+				BC114C0F18A9C28F004D2294 /* bitbird-ios */,
+				BC114C2818A9C28F004D2294 /* bitbird-iosTests */,
+				BC114C0818A9C28F004D2294 /* Frameworks */,
+				BC114C0718A9C28F004D2294 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC114C0718A9C28F004D2294 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC114C0618A9C28F004D2294 /* bitbird-ios.app */,
+				BC114C2118A9C28F004D2294 /* bitbird-iosTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC114C0818A9C28F004D2294 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC114C0918A9C28F004D2294 /* Foundation.framework */,
+				BC114C0B18A9C28F004D2294 /* CoreGraphics.framework */,
+				BC114C0D18A9C28F004D2294 /* UIKit.framework */,
+				BC114C2218A9C28F004D2294 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC114C0F18A9C28F004D2294 /* bitbird-ios */ = {
+			isa = PBXGroup;
+			children = (
+				BC114C1818A9C28F004D2294 /* BGAppDelegate.h */,
+				BC114C1918A9C28F004D2294 /* BGAppDelegate.m */,
+				BC114C1B18A9C28F004D2294 /* Images.xcassets */,
+				BC114C1018A9C28F004D2294 /* Supporting Files */,
+			);
+			path = "bitbird-ios";
+			sourceTree = "<group>";
+		};
+		BC114C1018A9C28F004D2294 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC114C1118A9C28F004D2294 /* bitbird-ios-Info.plist */,
+				BC114C1218A9C28F004D2294 /* InfoPlist.strings */,
+				BC114C1518A9C28F004D2294 /* main.m */,
+				BC114C1718A9C28F004D2294 /* bitbird-ios-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC114C2818A9C28F004D2294 /* bitbird-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC114C2E18A9C28F004D2294 /* bitbird_iosTests.m */,
+				BC114C2918A9C28F004D2294 /* Supporting Files */,
+			);
+			path = "bitbird-iosTests";
+			sourceTree = "<group>";
+		};
+		BC114C2918A9C28F004D2294 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC114C2A18A9C28F004D2294 /* bitbird-iosTests-Info.plist */,
+				BC114C2B18A9C28F004D2294 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC114C0518A9C28F004D2294 /* bitbird-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC114C3218A9C28F004D2294 /* Build configuration list for PBXNativeTarget "bitbird-ios" */;
+			buildPhases = (
+				BC114C0218A9C28F004D2294 /* Sources */,
+				BC114C0318A9C28F004D2294 /* Frameworks */,
+				BC114C0418A9C28F004D2294 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "bitbird-ios";
+			productName = "bitbird-ios";
+			productReference = BC114C0618A9C28F004D2294 /* bitbird-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BC114C2018A9C28F004D2294 /* bitbird-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC114C3518A9C28F004D2294 /* Build configuration list for PBXNativeTarget "bitbird-iosTests" */;
+			buildPhases = (
+				BC114C1D18A9C28F004D2294 /* Sources */,
+				BC114C1E18A9C28F004D2294 /* Frameworks */,
+				BC114C1F18A9C28F004D2294 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC114C2718A9C28F004D2294 /* PBXTargetDependency */,
+			);
+			name = "bitbird-iosTests";
+			productName = "bitbird-iosTests";
+			productReference = BC114C2118A9C28F004D2294 /* bitbird-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC114BFE18A9C28F004D2294 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BG;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = BitGames;
+				TargetAttributes = {
+					BC114C2018A9C28F004D2294 = {
+						TestTargetID = BC114C0518A9C28F004D2294;
+					};
+				};
+			};
+			buildConfigurationList = BC114C0118A9C28F004D2294 /* Build configuration list for PBXProject "bitbird-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BC114BFD18A9C28F004D2294;
+			productRefGroup = BC114C0718A9C28F004D2294 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC114C0518A9C28F004D2294 /* bitbird-ios */,
+				BC114C2018A9C28F004D2294 /* bitbird-iosTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC114C0418A9C28F004D2294 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC114C1418A9C28F004D2294 /* InfoPlist.strings in Resources */,
+				BC114C1C18A9C28F004D2294 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC114C1F18A9C28F004D2294 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC114C2D18A9C28F004D2294 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC114C0218A9C28F004D2294 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC114C1618A9C28F004D2294 /* main.m in Sources */,
+				BC114C1A18A9C28F004D2294 /* BGAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC114C1D18A9C28F004D2294 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC114C2F18A9C28F004D2294 /* bitbird_iosTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC114C2718A9C28F004D2294 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC114C0518A9C28F004D2294 /* bitbird-ios */;
+			targetProxy = BC114C2618A9C28F004D2294 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BC114C1218A9C28F004D2294 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC114C1318A9C28F004D2294 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BC114C2B18A9C28F004D2294 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC114C2C18A9C28F004D2294 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC114C3018A9C28F004D2294 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BC114C3118A9C28F004D2294 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC114C3318A9C28F004D2294 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "bitbird-ios/bitbird-ios-Prefix.pch";
+				INFOPLIST_FILE = "bitbird-ios/bitbird-ios-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BC114C3418A9C28F004D2294 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "bitbird-ios/bitbird-ios-Prefix.pch";
+				INFOPLIST_FILE = "bitbird-ios/bitbird-ios-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BC114C3618A9C28F004D2294 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/bitbird-ios.app/bitbird-ios";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "bitbird-ios/bitbird-ios-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "bitbird-iosTests/bitbird-iosTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BC114C3718A9C28F004D2294 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/bitbird-ios.app/bitbird-ios";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "bitbird-ios/bitbird-ios-Prefix.pch";
+				INFOPLIST_FILE = "bitbird-iosTests/bitbird-iosTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC114C0118A9C28F004D2294 /* Build configuration list for PBXProject "bitbird-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC114C3018A9C28F004D2294 /* Debug */,
+				BC114C3118A9C28F004D2294 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC114C3218A9C28F004D2294 /* Build configuration list for PBXNativeTarget "bitbird-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC114C3318A9C28F004D2294 /* Debug */,
+				BC114C3418A9C28F004D2294 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BC114C3518A9C28F004D2294 /* Build configuration list for PBXNativeTarget "bitbird-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC114C3618A9C28F004D2294 /* Debug */,
+				BC114C3718A9C28F004D2294 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC114BFE18A9C28F004D2294 /* Project object */;
+}

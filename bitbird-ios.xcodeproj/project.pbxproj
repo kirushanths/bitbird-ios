@@ -432,18 +432,10 @@
 		BC114E4818A9C4BF004D2294 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				BC114E4918A9C4BF004D2294 /* core */,
 				BC114E4A18A9C4BF004D2294 /* game */,
 				BC114E4B18A9C4BF004D2294 /* main */,
 			);
 			path = views;
-			sourceTree = "<group>";
-		};
-		BC114E4918A9C4BF004D2294 /* core */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = core;
 			sourceTree = "<group>";
 		};
 		BC114E4A18A9C4BF004D2294 /* game */ = {

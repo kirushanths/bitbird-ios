@@ -46,7 +46,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
         [self addHero];
 		
         //Making self delegate of physics World
-        self.physicsWorld.gravity = CGVectorMake(0,0);
+        self.physicsWorld.gravity = CGVectorMake(0,-4);
         self.physicsWorld.contactDelegate = self;
         
     }
@@ -72,7 +72,6 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 	hero.physicsBody.usesPreciseCollisionDetection = YES;
 	hero.name = @"hero";
 	hero.position = CGPointMake(120,160);
-	actionTouch = [SKAction moveByX:0 y:30 duration:.2];
 	
 	[self addChild:hero];
 }
@@ -105,7 +104,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
     NSArray *nodes = self.children;//1
     
     for(SKNode * node in nodes){
-        if (![node.name  isEqual: @"bg"] && ![node.name  isEqual: @"ship"]) {
+		if ([node.name isEqualToString:@"obstacle"]) {
             SKSpriteNode *ob = (SKSpriteNode *) node;
             CGPoint obVelocity = CGPointMake(-OBJECT_VELOCITY, 0);
             CGPoint amtToMove = CGPointMultiplyScalar(obVelocity,_dt);
@@ -152,7 +151,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	[hero runAction:actionTouch];
+	hero.physicsBody.velocity = CGVectorMake(0, 250);
 }
 
 -(void)update:(CFTimeInterval)currentTime {
@@ -170,7 +169,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
     if( currentTime - _lastObstacleAdded > 1)
     {
         _lastObstacleAdded = currentTime + 1;
-		[self addObstacle];
+//		[self addObstacle];
     }
 	
     
@@ -197,7 +196,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
         (secondBody.categoryBitMask & obstacleCategory) != 0)
     {
         [hero removeFromParent];
-        SKTransition *reveal = [SKTransition flipHorizontalWithDuration:0.5];
+        SKTransition *reveal = [SKTransition pushWithDirection:SKTransitionDirectionLeft duration:0.5];
         SKScene * gameOverScene = [[GameOverScene alloc] initWithSize:self.size];
         [self.view presentScene:gameOverScene transition:reveal];
 		

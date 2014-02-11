@@ -7,7 +7,8 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import <iAd/iAd.h>
 
-@interface GameOverScene : SKScene
+@interface GameOverScene : SKScene <ADBannerViewDelegate>
 
 @end

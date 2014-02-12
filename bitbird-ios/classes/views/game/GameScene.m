@@ -52,8 +52,13 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
     if (self = [super initWithSize:size])
 	{
         self.backgroundColor = [SKColor whiteColor];
+		background = [[UIImageView alloc] initWithFrame:self.frame];
+		background.image = [UIImage imageNamed:@"bg.png"];
+		background.contentMode = UIViewContentModeCenter;
+		[self.view addSubview:background];
 		
 		soundJump = [SKAction playSoundFileNamed:@"jump.wav" waitForCompletion:NO];
+		soundDeath = [SKAction playSoundFileNamed:@"gameover.wav" waitForCompletion:NO];
 		
         [self initalizingScrollingBackground];
         [self addHero];
@@ -233,11 +238,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
     if ((firstBody.categoryBitMask & heroCategory) != 0 &&
         (secondBody.categoryBitMask & obstacleCategory) != 0)
     {
-        [hero removeFromParent];
-        SKTransition *reveal = [SKTransition pushWithDirection:SKTransitionDirectionLeft duration:0.5];
-        SKScene * gameOverScene = [[GameOverScene alloc] initWithSize:self.size];
-        [self.view presentScene:gameOverScene transition:reveal];
-		
+        [self finishGame];
     }
 }
 
@@ -245,6 +246,18 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 {
 	gameStarted = YES;
 	self.physicsWorld.gravity = CGVectorMake(0,-4);
+}
+
+- (void)finishGame
+{
+	[hero runAction:soundDeath completion:^{
+		SKTransition *reveal = [SKTransition pushWithDirection:SKTransitionDirectionLeft duration:0.5];
+		SKScene * gameOverScene = [[GameOverScene alloc] initWithSize:self.size];
+		[self.view presentScene:gameOverScene transition:reveal];
+	}];
+	self.physicsWorld.gravity = CGVectorMake(0, 0);
+	hero.physicsBody.velocity = CGVectorMake(0, 0);
+	gameOver = YES;
 }
 
 - (BOOL)isGameRunning

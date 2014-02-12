@@ -11,6 +11,7 @@
 
 static const uint32_t heroCategory =  0x1 << 0;
 static const uint32_t obstacleCategory =  0x1 << 1;
+static const uint32_t floorCategory =  0x1 << 2;
 
 static const float BG_VELOCITY = 100.0;
 static const float OBJECT_VELOCITY = 160.0;
@@ -41,6 +42,9 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 	NSTimeInterval _lastUpdateTime;
 	NSTimeInterval _dt;
 	NSTimeInterval _lastObstacleAdded;
+	
+	BOOL gameStarted;
+	BOOL gameOver;
 }
 
 -(id)initWithSize:(CGSize)size
@@ -53,11 +57,10 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 		
         [self initalizingScrollingBackground];
         [self addHero];
+		[self addFloor];
 		
-        //Making self delegate of physics World
-        self.physicsWorld.gravity = CGVectorMake(0,-4);
         self.physicsWorld.contactDelegate = self;
-        
+        self.physicsWorld.gravity = CGVectorMake(0, 0);
     }
 	
     return self;
@@ -80,7 +83,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 	hero.physicsBody.collisionBitMask = 0;
 	hero.physicsBody.usesPreciseCollisionDetection = YES;
 	hero.name = @"hero";
-	hero.position = CGPointMake(120,160);
+	hero.position = CGPointMake(120,300);
 	
 	[self addChild:hero];
 }
@@ -106,6 +109,26 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
     missile.position = CGPointMake(self.frame.size.width + 20,r);
 	
     [self addChild:missile];
+}
+
+- (void)addFloor
+{
+    SKSpriteNode *item;
+	item = [SKSpriteNode spriteNodeWithColor:[UIColor brownColor] size:CGSizeMake(320, 120)];
+//    item = [SKSpriteNode spriteNodeWithImageNamed:@"red-missile.png"];
+    
+    //Adding SpriteKit physicsBody for collision detection
+    item.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:item.size];
+    item.physicsBody.categoryBitMask = obstacleCategory;
+    item.physicsBody.dynamic = NO;
+    item.physicsBody.contactTestBitMask = heroCategory;
+    item.physicsBody.collisionBitMask = 0;
+    item.physicsBody.usesPreciseCollisionDetection = YES;
+    item.name = @"floor";
+
+    item.position = CGPointMake(item.size.width / 2, item.size.height / 2);
+	
+    [self addChild:item];
 }
 
 - (void)moveObstacle
@@ -160,8 +183,12 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	hero.physicsBody.velocity = CGVectorMake(0, 250);
-	[hero runAction:soundJump];
+	if ([self isGameRunning]) {
+		hero.physicsBody.velocity = CGVectorMake(0, 250);
+		[hero runAction:soundJump];
+	} else {
+		[self startGame];
+	}
 }
 
 -(void)update:(CFTimeInterval)currentTime {
@@ -176,15 +203,16 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
     }
     _lastUpdateTime = currentTime;
     
-    if( currentTime - _lastObstacleAdded > 1)
-    {
-        _lastObstacleAdded = currentTime + 1;
-//		[self addObstacle];
-    }
-	
-    
-    [self moveBg];
-    [self moveObstacle];
+	if ([self isGameRunning]) {
+		if( currentTime - _lastObstacleAdded > 1)
+		{
+			_lastObstacleAdded = currentTime + 1;
+			//		[self addObstacle];
+		}
+		
+		[self moveBg];
+		[self moveObstacle];
+	}
 }
 
 
@@ -211,6 +239,17 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
         [self.view presentScene:gameOverScene transition:reveal];
 		
     }
+}
+
+- (void)startGame
+{
+	gameStarted = YES;
+	self.physicsWorld.gravity = CGVectorMake(0,-4);
+}
+
+- (BOOL)isGameRunning
+{
+	return gameStarted && !gameOver;
 }
 
 @end

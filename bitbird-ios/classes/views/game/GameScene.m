@@ -11,10 +11,15 @@
 
 static const uint32_t heroCategory =  0x1 << 0;
 static const uint32_t obstacleCategory =  0x1 << 1;
-static const uint32_t floorCategory =  0x1 << 2;
+static const uint32_t pointCategory =  0x1 << 2;
 
 static const float BG_VELOCITY = 100.0;
-static const float OBJECT_VELOCITY = 160.0;
+static const float OBJECT_VELOCITY = 170.0;
+
+static const float OBSTACLE_TIME_INTERVAL = 0.6;
+static const float FLOOR_HEIGHT = 100.0;
+static const float OPENING_HEIGHT = 100.0;
+static const float OPENING_PADDING = 70.0;
 
 static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
 {
@@ -30,8 +35,13 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 
 @implementation GameScene {
 	UIImageView *background;
+	UILabel *scoreboard;
+	
+	long score;
+	
 	SKSpriteNode *floor;
 	SKSpriteNode *hero;
+	
 	SKAction *actionTouch;
 	SKAction *actionDeath;
 	
@@ -52,23 +62,31 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
     if (self = [super initWithSize:size])
 	{
         self.backgroundColor = [SKColor whiteColor];
-		background = [[UIImageView alloc] initWithFrame:self.frame];
-		background.image = [UIImage imageNamed:@"bg.png"];
-		background.contentMode = UIViewContentModeCenter;
-		[self.view addSubview:background];
+		score = 0;
 		
 		soundJump = [SKAction playSoundFileNamed:@"jump.wav" waitForCompletion:NO];
 		soundDeath = [SKAction playSoundFileNamed:@"gameover.wav" waitForCompletion:NO];
-		
-        [self initalizingScrollingBackground];
-        [self addHero];
-		[self addFloor];
-		
-        self.physicsWorld.contactDelegate = self;
-        self.physicsWorld.gravity = CGVectorMake(0, 0);
+		soundScore = [SKAction playSoundFileNamed:@"coin.wav" waitForCompletion:NO];
     }
 	
     return self;
+}
+
+- (void)didMoveToView:(SKView *)view
+{
+	scoreboard = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 150)];
+	scoreboard.textAlignment = UITextAlignmentCenter;
+	scoreboard.textColor = [UIColor blackColor];
+	scoreboard.font = [UIFont systemFontOfSize:30.0f];
+	scoreboard.text = @"0";
+	[self.view addSubview:scoreboard];
+	
+	[self initalizingScrollingBackground];
+	[self addHero];
+	[self addFloor];
+	
+	self.physicsWorld.contactDelegate = self;
+	self.physicsWorld.gravity = CGVectorMake(0, 0);
 }
 
 /* SETUP */
@@ -77,7 +95,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 {
 	//initalizing spaceship node
 	hero = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-	[hero setScale:0.5];
+	[hero setScale:0.25];
 	hero.zRotation = - M_PI / 2;
     
 	//Adding SpriteKit physicsBody for collision detection
@@ -88,6 +106,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 	hero.physicsBody.collisionBitMask = 0;
 	hero.physicsBody.usesPreciseCollisionDetection = YES;
 	hero.name = @"hero";
+	hero.zPosition = 102;
 	hero.position = CGPointMake(120,300);
 	
 	[self addChild:hero];
@@ -96,44 +115,57 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 -(void)addObstacle
 {
     //initalizing spaceship node
-    SKSpriteNode *missile;
-    missile = [SKSpriteNode spriteNodeWithImageNamed:@"red-missile.png"];
-    [missile setScale:0.15];
+    SKSpriteNode *top = [SKSpriteNode spriteNodeWithColor:[UIColor yellowColor] size:CGSizeMake(50, 1000)];
+    SKSpriteNode *bottom = [SKSpriteNode spriteNodeWithColor:[UIColor yellowColor] size:CGSizeMake(50, 1000)];
+    SKSpriteNode *point = [SKSpriteNode spriteNodeWithColor:[UIColor grayColor] size:CGSizeMake(50, OPENING_HEIGHT)];
     
-    //Adding SpriteKit physicsBody for collision detection
-    missile.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:missile.size];
-    missile.physicsBody.categoryBitMask = obstacleCategory;
-    missile.physicsBody.dynamic = YES;
-    missile.physicsBody.contactTestBitMask = heroCategory;
-    missile.physicsBody.collisionBitMask = 0;
-    missile.physicsBody.usesPreciseCollisionDetection = YES;
-    missile.name = @"obstacle";
-    
-    //selecting random y position for missile
-    int r = arc4random() % 300;
-    missile.position = CGPointMake(self.frame.size.width + 20,r);
+	[bottom setZRotation:2 * M_PI];
 	
-    [self addChild:missile];
+	top.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:top.size];
+	bottom.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bottom.size];
+	point.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:point.size];
+	
+	top.physicsBody.categoryBitMask = bottom.physicsBody.categoryBitMask = obstacleCategory;
+	point.physicsBody.categoryBitMask = pointCategory;
+	top.physicsBody.dynamic = bottom.physicsBody.dynamic = point.physicsBody.dynamic = NO;
+	top.physicsBody.contactTestBitMask = bottom.physicsBody.contactTestBitMask = point.physicsBody.contactTestBitMask = heroCategory;
+	top.physicsBody.collisionBitMask = bottom.physicsBody.collisionBitMask = point.physicsBody.collisionBitMask = 0;
+	top.physicsBody.usesPreciseCollisionDetection = bottom.physicsBody.usesPreciseCollisionDetection = point.physicsBody.usesPreciseCollisionDetection = YES;
+	top.name = bottom.name = point.name = @"obstacle";
+    top.zPosition = bottom.zPosition = 100;
+	point.zPosition = 99;
+	
+    //selecting random y position for missile
+	int padding = OPENING_PADDING;
+    int r = arc4random() % (int) (self.frame.size.height - FLOOR_HEIGHT - OPENING_HEIGHT - (padding * 2));
+	
+    bottom.position = CGPointMake(self.frame.size.width + 20, FLOOR_HEIGHT + padding + r - (bottom.size.height / 2));
+	top.position = CGPointMake(self.frame.size.width + 20, bottom.position.y + OPENING_HEIGHT + top.size.height);
+	point.position = CGPointMake(self.frame.size.width + 20, FLOOR_HEIGHT + padding + r + OPENING_HEIGHT / 2);
+	
+    [self addChild:top];
+	[self addChild:bottom];
+	[self addChild:point];
 }
 
 - (void)addFloor
 {
-    SKSpriteNode *item;
-	item = [SKSpriteNode spriteNodeWithColor:[UIColor brownColor] size:CGSizeMake(320, 120)];
+	floor = [SKSpriteNode spriteNodeWithColor:[UIColor brownColor] size:CGSizeMake(320, FLOOR_HEIGHT)];
 //    item = [SKSpriteNode spriteNodeWithImageNamed:@"red-missile.png"];
     
     //Adding SpriteKit physicsBody for collision detection
-    item.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:item.size];
-    item.physicsBody.categoryBitMask = obstacleCategory;
-    item.physicsBody.dynamic = NO;
-    item.physicsBody.contactTestBitMask = heroCategory;
-    item.physicsBody.collisionBitMask = 0;
-    item.physicsBody.usesPreciseCollisionDetection = YES;
-    item.name = @"floor";
+    floor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:floor.size];
+    floor.physicsBody.categoryBitMask = obstacleCategory;
+    floor.physicsBody.dynamic = NO;
+    floor.physicsBody.contactTestBitMask = heroCategory;
+    floor.physicsBody.collisionBitMask = 0;
+    floor.physicsBody.usesPreciseCollisionDetection = YES;
+	floor.zPosition = 101;
+    floor.name = @"floor";
 
-    item.position = CGPointMake(item.size.width / 2, item.size.height / 2);
+    floor.position = CGPointMake(floor.size.width / 2, floor.size.height / 2);
 	
-    [self addChild:item];
+    [self addChild:floor];
 }
 
 - (void)moveObstacle
@@ -209,10 +241,10 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
     _lastUpdateTime = currentTime;
     
 	if ([self isGameRunning]) {
-		if( currentTime - _lastObstacleAdded > 1)
+		if( currentTime - _lastObstacleAdded > OBSTACLE_TIME_INTERVAL)
 		{
-			_lastObstacleAdded = currentTime + 1;
-			//		[self addObstacle];
+			_lastObstacleAdded = currentTime + OBSTACLE_TIME_INTERVAL;
+			[self addObstacle];
 		}
 		
 		[self moveBg];
@@ -234,6 +266,12 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
         firstBody = contact.bodyB;
         secondBody = contact.bodyA;
     }
+	
+	if ((firstBody.categoryBitMask & heroCategory) != 0 &&
+        (secondBody.categoryBitMask & pointCategory) != 0)
+	{
+		[self addScore];
+	}
     
     if ((firstBody.categoryBitMask & heroCategory) != 0 &&
         (secondBody.categoryBitMask & obstacleCategory) != 0)
@@ -251,13 +289,20 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 - (void)finishGame
 {
 	[hero runAction:soundDeath completion:^{
-		SKTransition *reveal = [SKTransition pushWithDirection:SKTransitionDirectionLeft duration:0.5];
-		SKScene * gameOverScene = [[GameOverScene alloc] initWithSize:self.size];
-		[self.view presentScene:gameOverScene transition:reveal];
+//		SKTransition *reveal = [SKTransition pushWithDirection:SKTransitionDirectionLeft duration:0.5];
+//		SKScene * gameOverScene = [[GameOverScene alloc] initWithSize:self.size];
+//		[self.view presentScene:gameOverScene transition:reveal];
 	}];
 	self.physicsWorld.gravity = CGVectorMake(0, 0);
 	hero.physicsBody.velocity = CGVectorMake(0, 0);
 	gameOver = YES;
+}
+
+- (void)addScore
+{
+	[hero runAction:soundScore];
+	score++;
+	scoreboard.text = [NSString stringWithFormat:@"%ld", score];
 }
 
 - (BOOL)isGameRunning

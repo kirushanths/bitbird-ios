@@ -920,7 +920,7 @@
 					"/Users/kirushanthsakthivetpillai/Documents/Kiru/Work/BitGames/bitbird/bitbird-ios/bitbird-ios/vendor/TestFlight",
 				);
 				PRODUCT_NAME = "Bit Bird";
-				PROVISIONING_PROFILE = "5D1DC723-C42A-44D0-B7D0-A19AFA101311";
+				PROVISIONING_PROFILE = "ADAB66DC-B393-410C-B46D-A037EFDCA663";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

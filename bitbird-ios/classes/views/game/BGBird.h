@@ -12,5 +12,6 @@
 
 + (instancetype)createBird;
 - (void)startAnimation;
+- (void)stopAnimation;
 
 @end

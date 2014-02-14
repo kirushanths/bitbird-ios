@@ -8,8 +8,15 @@
 
 #import "BGAppDelegate.h"
 #import "BGGameViewController.h"
+#import "iRate.h"
 
 @implementation BGAppDelegate
+
++ (void)initialize
+{
+	[[iRate sharedInstance] setUsesUntilPrompt:5];
+//	[[iRate sharedInstance] setPreviewMode:YES];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

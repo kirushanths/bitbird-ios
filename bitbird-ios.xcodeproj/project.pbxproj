@@ -84,6 +84,8 @@
 		BC114ED718ADC579004D2294 /* jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BC114EBB18ADC579004D2294 /* jump.mp3 */; };
 		BC114ED818ADC579004D2294 /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC114EBC18ADC579004D2294 /* jump.wav */; };
 		BC114EDB18ADC661004D2294 /* BGBird.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114EDA18ADC661004D2294 /* BGBird.m */; };
+		BC114EE118ADDA8D004D2294 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC114EDE18ADDA8D004D2294 /* iRate.bundle */; };
+		BC114EE218ADDA8D004D2294 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114EE018ADDA8D004D2294 /* iRate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +209,9 @@
 		BC114EBC18ADC579004D2294 /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
 		BC114ED918ADC661004D2294 /* BGBird.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGBird.h; sourceTree = "<group>"; };
 		BC114EDA18ADC661004D2294 /* BGBird.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGBird.m; sourceTree = "<group>"; };
+		BC114EDE18ADDA8D004D2294 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
+		BC114EDF18ADDA8D004D2294 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
+		BC114EE018ADDA8D004D2294 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +346,7 @@
 		BC114C5418A9C471004D2294 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				BC114EDD18ADDA8D004D2294 /* iRate */,
 				BC114C5518A9C471004D2294 /* AppleSampleCode */,
 				BC114C5A18A9C471004D2294 /* GoogleToolbox */,
 				BC114C6418A9C471004D2294 /* JSONKit */,
@@ -597,6 +603,16 @@
 			path = sounds;
 			sourceTree = "<group>";
 		};
+		BC114EDD18ADDA8D004D2294 /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				BC114EDE18ADDA8D004D2294 /* iRate.bundle */,
+				BC114EDF18ADDA8D004D2294 /* iRate.h */,
+				BC114EE018ADDA8D004D2294 /* iRate.m */,
+			);
+			path = iRate;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -699,6 +715,7 @@
 				BC114EC518ADC579004D2294 /* Icon-40.png in Resources */,
 				BC114ED618ADC579004D2294 /* gameover.wav in Resources */,
 				BC114EBD18ADC579004D2294 /* bird1@2x.png in Resources */,
+				BC114EE118ADDA8D004D2294 /* iRate.bundle in Resources */,
 				BC114ED418ADC579004D2294 /* iTunesArtwork@2x.png in Resources */,
 				BC114ED518ADC579004D2294 /* coin.wav in Resources */,
 				BC114ED318ADC579004D2294 /* iTunesArtwork.png in Resources */,
@@ -736,6 +753,7 @@
 				BC114E8718A9CB05004D2294 /* GameScene.m in Sources */,
 				BC114D8818A9C472004D2294 /* KeychainItemWrapper.m in Sources */,
 				BC114E8218A9C784004D2294 /* BGGameViewController.m in Sources */,
+				BC114EE218ADDA8D004D2294 /* iRate.m in Sources */,
 				BC114E7F18A9C774004D2294 /* BGMainMenuViewController.m in Sources */,
 				BC114E7C18A9C749004D2294 /* BGNavigationViewController.m in Sources */,
 				BC114E1918A9C472004D2294 /* UIDevice-Orientation.m in Sources */,
@@ -818,7 +836,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -851,7 +869,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -865,6 +883,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bitbird-ios/bitbird-ios-Prefix.pch";
 				INFOPLIST_FILE = "bitbird-ios/bitbird-ios-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/kirushanthsakthivetpillai/Documents/Kiru/Work/BitGames/bitbird/bitbird-ios/bitbird-ios/vendor/TestFlight",
@@ -882,6 +901,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bitbird-ios/bitbird-ios-Prefix.pch";
 				INFOPLIST_FILE = "bitbird-ios/bitbird-ios-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/kirushanthsakthivetpillai/Documents/Kiru/Work/BitGames/bitbird/bitbird-ios/bitbird-ios/vendor/TestFlight",

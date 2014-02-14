@@ -9,6 +9,7 @@
 #import "GameScene.h"
 #import "GameOverScene.h"
 #import "BGBird.h"
+#import "BGConstants.h"
 
 static const uint32_t heroCategory =  0x1 << 0;
 static const uint32_t obstacleCategory =  0x1 << 1;
@@ -37,10 +38,16 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 
 
 @implementation GameScene {
+	UIView *overlay;
+	UIView *adView;
+	
 	UIImageView *background;
 	UILabel *scoreboard;
 	UILabel *instructions;
 	UILabel *gameoverText;
+	
+	UIButton *replayButton;
+	UIButton *rateButton;
 	
 	long score;
 	
@@ -78,25 +85,42 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 
 - (void)didMoveToView:(SKView *)view
 {
+	overlay = [[UIView alloc] initWithFrame:self.frame];
+	overlay.backgroundColor = [UIColor colorWithWhite:1 alpha:0.4f];
+	[self.view addSubview:overlay];
+	
 	scoreboard = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 150)];
-	scoreboard.textAlignment = UITextAlignmentCenter;
+	scoreboard.textAlignment = NSTextAlignmentCenter;
 	scoreboard.textColor = [UIColor blackColor];
 	scoreboard.font = [UIFont fontWithName:@"Fipps-Regular" size:35];
 	scoreboard.text = @"0";
 	[self.view addSubview:scoreboard];
 	
 	instructions = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-	instructions.textAlignment = UITextAlignmentCenter;
+	instructions.textAlignment = NSTextAlignmentCenter;
 	instructions.textColor = [UIColor blackColor];
 	instructions.font = [UIFont fontWithName:@"Fipps-Regular" size:20];
 	instructions.text = @"TAP to START";
 	[self.view addSubview:instructions];
 	
 	gameoverText = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-	gameoverText.textAlignment = UITextAlignmentCenter;
+	gameoverText.textAlignment = NSTextAlignmentCenter;
 	gameoverText.textColor = [UIColor blackColor];
 	gameoverText.font = [UIFont fontWithName:@"Fipps-Regular" size:30];
 	gameoverText.text = @"GAME OVER";
+	gameoverText.hidden = YES;
+	[self.view addSubview:gameoverText];
+	
+	float buttonHeight = 60;
+	replayButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	replayButton.frame = CGRectMake(0, self.frame.size.height - buttonHeight, self.frame.size.width, buttonHeight);
+	replayButton.backgroundColor = SE_COLOR_BLUE;
+	[replayButton.titleLabel setFont:[UIFont fontWithName:@"Fipps-Regular" size:18]];
+	[replayButton setTitle:@"Play Again" forState:UIControlStateNormal];
+	[replayButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	replayButton.hidden = YES;
+	[replayButton addTarget:self action:@selector(startOver) forControlEvents:UIControlEventTouchUpInside];
+	[self.view addSubview:replayButton];
 	
 	[self addSky];
 	[self addFloor];
@@ -104,6 +128,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 	
 	self.physicsWorld.contactDelegate = self;
 	self.physicsWorld.gravity = CGVectorMake(0, 0);
+	self.physicsBody.friction = 0.0;
 }
 
 /* SETUP */
@@ -244,9 +269,9 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	if ([self isGameRunning]) {
-		hero.physicsBody.velocity = CGVectorMake(0, 250);
+		hero.physicsBody.velocity = CGVectorMake(0, 300);
 		[hero runAction:soundJump];
-	} else {
+	} else if (!gameOver) {
 		[self startGame];
 	}
 }
@@ -311,21 +336,43 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 - (void)startGame
 {
 	gameStarted = YES;
-	self.physicsWorld.gravity = CGVectorMake(0,-4);
-	[instructions removeFromSuperview];
+	self.physicsWorld.gravity = CGVectorMake(0,-5);
+	instructions.hidden = YES;
+	overlay.hidden = YES;
 }
 
 - (void)finishGame
 {
 	[hero runAction:soundDeath completion:^{
+		[hero stopAnimation];
 //		SKTransition *reveal = [SKTransition pushWithDirection:SKTransitionDirectionLeft duration:0.5];
 //		SKScene * gameOverScene = [[GameOverScene alloc] initWithSize:self.size];
 //		[self.view presentScene:gameOverScene transition:reveal];
 	}];
 	self.physicsWorld.gravity = CGVectorMake(0, 0);
 	hero.physicsBody.velocity = CGVectorMake(0, 0);
-	[self.view addSubview:gameoverText];
+	overlay.hidden = NO;
+	gameoverText.hidden = NO;
+	replayButton.hidden = NO;
+	rateButton.hidden = NO;
 	gameOver = YES;
+}
+
+- (void)startOver
+{
+	[overlay removeFromSuperview];
+	[gameoverText removeFromSuperview];
+	[replayButton removeFromSuperview];
+	[rateButton removeFromSuperview];
+	[instructions removeFromSuperview];
+	[scoreboard removeFromSuperview];
+	[background removeFromSuperview];
+	[adView removeFromSuperview];
+	
+	SKTransition *reveal = [SKTransition pushWithDirection:SKTransitionDirectionRight duration:0.5];
+	GameOverScene * scene = [GameOverScene sceneWithSize:self.view.bounds.size];
+	scene.scaleMode = SKSceneScaleModeAspectFill;
+	[self.view presentScene:scene transition:reveal];
 }
 
 - (void)addScore
@@ -338,6 +385,38 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 - (BOOL)isGameRunning
 {
 	return gameStarted && !gameOver;
+}
+
+- (void)showAdvert
+{
+	if (adView) {
+		[adView removeFromSuperview];
+	}
+	adView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 50)];
+	adView.backgroundColor = [UIColor blackColor];
+	
+	ADBannerView *bannerAd = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+	bannerAd.delegate = self;
+	[adView addSubview:bannerAd];
+	
+	[self.view addSubview:adView];
+}
+
+#pragma mark - Ad Delegate
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+	
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error;
+{
+	NSLog(@"Banner Error %@", [error localizedDescription]);
+}
+
+- (void)bannerViewActionDidFinish:(ADBannerView *)banner
+{
+	
 }
 
 @end

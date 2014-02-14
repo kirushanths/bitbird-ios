@@ -18,6 +18,9 @@
 {
 	//Store successful login creds
 	KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:kKeyChainStoreIdentifier accessGroup:nil];
+	[keychainItem resetKeychainItem];
+	[keychainItem setObject:kKeyChainStoreIdentifier forKey:(__bridge id)kSecAttrService];
+	[keychainItem setObject:kKeyChainStoreIdentifier forKey:(__bridge id)kSecAttrAccount];
 	[keychainItem setObject:[NSString stringWithFormat:@"%d", score] forKey:(__bridge id)kSecValueData];
 }
 

@@ -86,6 +86,7 @@
 		BC114EDB18ADC661004D2294 /* BGBird.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114EDA18ADC661004D2294 /* BGBird.m */; };
 		BC114EE118ADDA8D004D2294 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC114EDE18ADDA8D004D2294 /* iRate.bundle */; };
 		BC114EE218ADDA8D004D2294 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114EE018ADDA8D004D2294 /* iRate.m */; };
+		BC114EE618ADE711004D2294 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114EE518ADE711004D2294 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +213,7 @@
 		BC114EDE18ADDA8D004D2294 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
 		BC114EDF18ADDA8D004D2294 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
 		BC114EE018ADDA8D004D2294 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
+		BC114EE518ADE711004D2294 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC114EE618ADE711004D2294 /* StoreKit.framework in Frameworks */,
 				BC114E8418A9C99F004D2294 /* SpriteKit.framework in Frameworks */,
 				BC114E6918A9C607004D2294 /* CoreImage.framework in Frameworks */,
 				BC114E6A18A9C607004D2294 /* CoreText.framework in Frameworks */,
@@ -276,6 +279,7 @@
 		BC114C0818A9C28F004D2294 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC114EE518ADE711004D2294 /* StoreKit.framework */,
 				BC114E8318A9C99F004D2294 /* SpriteKit.framework */,
 				BC114E6218A9C607004D2294 /* CoreImage.framework */,
 				BC114E6318A9C607004D2294 /* CoreText.framework */,
@@ -880,6 +884,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kirushanth Sakthivetpillai (H6K6Z9WEFA)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bitbird-ios/bitbird-ios-Prefix.pch";
 				INFOPLIST_FILE = "bitbird-ios/bitbird-ios-Info.plist";
@@ -889,6 +894,7 @@
 					"/Users/kirushanthsakthivetpillai/Documents/Kiru/Work/BitGames/bitbird/bitbird-ios/bitbird-ios/vendor/TestFlight",
 				);
 				PRODUCT_NAME = "Bit Bird";
+				PROVISIONING_PROFILE = "5DBC8CD0-6F7B-44A1-BEC2-37F85EF0B882";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -898,6 +904,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Kirushanth Sakthivetpillai (2383GGGV9U)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bitbird-ios/bitbird-ios-Prefix.pch";
 				INFOPLIST_FILE = "bitbird-ios/bitbird-ios-Info.plist";
@@ -907,6 +914,7 @@
 					"/Users/kirushanthsakthivetpillai/Documents/Kiru/Work/BitGames/bitbird/bitbird-ios/bitbird-ios/vendor/TestFlight",
 				);
 				PRODUCT_NAME = "Bit Bird";
+				PROVISIONING_PROFILE = "5D1DC723-C42A-44D0-B7D0-A19AFA101311";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

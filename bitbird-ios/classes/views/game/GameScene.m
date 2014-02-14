@@ -10,6 +10,7 @@
 #import "GameOverScene.h"
 #import "BGBird.h"
 #import "BGConstants.h"
+#import "GameManager.h"
 
 static const uint32_t heroCategory =  0x1 << 0;
 static const uint32_t obstacleCategory =  0x1 << 1;
@@ -39,17 +40,18 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 
 @implementation GameScene {
 	UIView *overlay;
-	UIView *adView;
 	
 	UIImageView *background;
 	UILabel *scoreboard;
 	UILabel *instructions;
 	UILabel *gameoverText;
+	UILabel *highestScore;
 	
 	UIButton *replayButton;
 	UIButton *rateButton;
 	
 	long score;
+	long highscore;
 	
 	BGBird *hero;
 	
@@ -111,6 +113,14 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 	gameoverText.hidden = YES;
 	[self.view addSubview:gameoverText];
 	
+	highestScore = [[UILabel alloc] initWithFrame:CGRectMake(0, 120, self.frame.size.width, self.frame.size.height - 120)];
+	highestScore.textAlignment = NSTextAlignmentCenter;
+	highestScore.textColor = [UIColor blackColor];
+	highestScore.font = [UIFont fontWithName:@"Fipps-Regular" size:20];
+	highestScore.text = @"High Score: 0";
+	highestScore.hidden = YES;
+	[self.view addSubview:highestScore];
+	
 	float buttonHeight = 60;
 	replayButton = [UIButton buttonWithType:UIButtonTypeCustom];
 	replayButton.frame = CGRectMake(0, self.frame.size.height - buttonHeight, self.frame.size.width, buttonHeight);
@@ -121,6 +131,8 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 	replayButton.hidden = YES;
 	[replayButton addTarget:self action:@selector(startOver) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:replayButton];
+	
+	highscore = [[GameManager sharedInstance] retrieveHighScore];
 	
 	[self addSky];
 	[self addFloor];
@@ -345,9 +357,6 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 {
 	[hero runAction:soundDeath completion:^{
 		[hero stopAnimation];
-//		SKTransition *reveal = [SKTransition pushWithDirection:SKTransitionDirectionLeft duration:0.5];
-//		SKScene * gameOverScene = [[GameOverScene alloc] initWithSize:self.size];
-//		[self.view presentScene:gameOverScene transition:reveal];
 	}];
 	self.physicsWorld.gravity = CGVectorMake(0, 0);
 	hero.physicsBody.velocity = CGVectorMake(0, 0);
@@ -355,19 +364,27 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 	gameoverText.hidden = NO;
 	replayButton.hidden = NO;
 	rateButton.hidden = NO;
+	
+	highestScore.hidden = NO;
+
+	if (score > highscore) {
+		highscore = score;
+		[[GameManager sharedInstance] storeHighScore:score];
+		highestScore.textColor = THM_COLOR_RED;
+	}
+	
+	highestScore.text = [NSString stringWithFormat:@"High Score: %ld", highscore];
+	
+	[self showAdvert];
 	gameOver = YES;
 }
 
 - (void)startOver
 {
-	[overlay removeFromSuperview];
-	[gameoverText removeFromSuperview];
-	[replayButton removeFromSuperview];
-	[rateButton removeFromSuperview];
-	[instructions removeFromSuperview];
-	[scoreboard removeFromSuperview];
-	[background removeFromSuperview];
-	[adView removeFromSuperview];
+	NSArray *currentViews = [NSArray arrayWithArray:self.view.subviews];
+	for (UIView *v in currentViews) {
+		[v removeFromSuperview];
+	}
 	
 	SKTransition *reveal = [SKTransition pushWithDirection:SKTransitionDirectionRight duration:0.5];
 	GameOverScene * scene = [GameOverScene sceneWithSize:self.view.bounds.size];
@@ -389,24 +406,16 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 
 - (void)showAdvert
 {
-	if (adView) {
-		[adView removeFromSuperview];
-	}
-	adView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 50)];
-	adView.backgroundColor = [UIColor blackColor];
-	
 	ADBannerView *bannerAd = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
 	bannerAd.delegate = self;
-	[adView addSubview:bannerAd];
-	
-	[self.view addSubview:adView];
+	[self.view addSubview:bannerAd];
 }
 
 #pragma mark - Ad Delegate
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
-	
+	NSLog(@"Banner did Load");
 }
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error;
@@ -416,7 +425,8 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 
 - (void)bannerViewActionDidFinish:(ADBannerView *)banner
 {
-	
+	NSLog(@"Banner did Finish");
+	[banner removeFromSuperview];
 }
 
 @end

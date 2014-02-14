@@ -33,6 +33,11 @@
         [self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
 }
 
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
+}
+
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
     

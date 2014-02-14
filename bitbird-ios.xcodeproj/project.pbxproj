@@ -54,14 +54,36 @@
 		BC114E8218A9C784004D2294 /* BGGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E8118A9C784004D2294 /* BGGameViewController.m */; };
 		BC114E8418A9C99F004D2294 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E8318A9C99F004D2294 /* SpriteKit.framework */; };
 		BC114E8718A9CB05004D2294 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E8618A9CB05004D2294 /* GameScene.m */; };
-		BC114E8D18A9CFED004D2294 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114E8A18A9CFED004D2294 /* bg.png */; };
-		BC114E8E18A9CFED004D2294 /* red-missile.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114E8B18A9CFED004D2294 /* red-missile.png */; };
-		BC114E8F18A9CFED004D2294 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114E8C18A9CFED004D2294 /* Spaceship.png */; };
 		BC114E9218A9D06F004D2294 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E9118A9D06F004D2294 /* GameOverScene.m */; };
-		BC114E9718A9E64B004D2294 /* coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC114E9418A9E64B004D2294 /* coin.wav */; };
-		BC114E9818A9E64B004D2294 /* gameover.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC114E9518A9E64B004D2294 /* gameover.wav */; };
-		BC114E9918A9E64B004D2294 /* jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BC114E9618A9E64B004D2294 /* jump.mp3 */; };
-		BC114E9B18A9E74D004D2294 /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC114E9A18A9E74D004D2294 /* jump.wav */; };
+		BC114EBD18ADC579004D2294 /* bird1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114E9D18ADC579004D2294 /* bird1@2x.png */; };
+		BC114EBE18ADC579004D2294 /* bird2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114E9E18ADC579004D2294 /* bird2@2x.png */; };
+		BC114EBF18ADC579004D2294 /* floor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114E9F18ADC579004D2294 /* floor@2x.png */; };
+		BC114EC018ADC579004D2294 /* pipe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EA018ADC579004D2294 /* pipe@2x.png */; };
+		BC114EC118ADC579004D2294 /* sky@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EA118ADC579004D2294 /* sky@2x.png */; };
+		BC114EC218ADC579004D2294 /* Fipps-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC114EA318ADC579004D2294 /* Fipps-Regular.otf */; };
+		BC114EC318ADC579004D2294 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EA518ADC579004D2294 /* Default-568h@2x.png */; };
+		BC114EC418ADC579004D2294 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EA618ADC579004D2294 /* Default@2x.png */; };
+		BC114EC518ADC579004D2294 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EA818ADC579004D2294 /* Icon-40.png */; };
+		BC114EC618ADC579004D2294 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EA918ADC579004D2294 /* Icon-40@2x.png */; };
+		BC114EC718ADC579004D2294 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EAA18ADC579004D2294 /* Icon-60.png */; };
+		BC114EC818ADC579004D2294 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EAB18ADC579004D2294 /* Icon-60@2x.png */; };
+		BC114EC918ADC579004D2294 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EAC18ADC579004D2294 /* Icon-72.png */; };
+		BC114ECA18ADC579004D2294 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EAD18ADC579004D2294 /* Icon-72@2x.png */; };
+		BC114ECB18ADC579004D2294 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EAE18ADC579004D2294 /* Icon-76.png */; };
+		BC114ECC18ADC579004D2294 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EAF18ADC579004D2294 /* Icon-76@2x.png */; };
+		BC114ECD18ADC579004D2294 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EB018ADC579004D2294 /* Icon-Small-50.png */; };
+		BC114ECE18ADC579004D2294 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EB118ADC579004D2294 /* Icon-Small-50@2x.png */; };
+		BC114ECF18ADC579004D2294 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EB218ADC579004D2294 /* Icon-Small.png */; };
+		BC114ED018ADC579004D2294 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EB318ADC579004D2294 /* Icon-Small@2x.png */; };
+		BC114ED118ADC579004D2294 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EB418ADC579004D2294 /* Icon.png */; };
+		BC114ED218ADC579004D2294 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EB518ADC579004D2294 /* Icon@2x.png */; };
+		BC114ED318ADC579004D2294 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EB618ADC579004D2294 /* iTunesArtwork.png */; };
+		BC114ED418ADC579004D2294 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC114EB718ADC579004D2294 /* iTunesArtwork@2x.png */; };
+		BC114ED518ADC579004D2294 /* coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC114EB918ADC579004D2294 /* coin.wav */; };
+		BC114ED618ADC579004D2294 /* gameover.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC114EBA18ADC579004D2294 /* gameover.wav */; };
+		BC114ED718ADC579004D2294 /* jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BC114EBB18ADC579004D2294 /* jump.mp3 */; };
+		BC114ED818ADC579004D2294 /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC114EBC18ADC579004D2294 /* jump.wav */; };
+		BC114EDB18ADC661004D2294 /* BGBird.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114EDA18ADC661004D2294 /* BGBird.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +97,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BC114C0618A9C28F004D2294 /* bitbird-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bitbird-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC114C0618A9C28F004D2294 /* Bit Bird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bit Bird.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC114C0918A9C28F004D2294 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BC114C0B18A9C28F004D2294 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BC114C0D18A9C28F004D2294 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -153,15 +175,38 @@
 		BC114E8318A9C99F004D2294 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		BC114E8518A9CB05004D2294 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		BC114E8618A9CB05004D2294 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
-		BC114E8A18A9CFED004D2294 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
-		BC114E8B18A9CFED004D2294 /* red-missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-missile.png"; sourceTree = "<group>"; };
-		BC114E8C18A9CFED004D2294 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		BC114E9018A9D06F004D2294 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		BC114E9118A9D06F004D2294 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
-		BC114E9418A9E64B004D2294 /* coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coin.wav; sourceTree = "<group>"; };
-		BC114E9518A9E64B004D2294 /* gameover.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameover.wav; sourceTree = "<group>"; };
-		BC114E9618A9E64B004D2294 /* jump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jump.mp3; sourceTree = "<group>"; };
-		BC114E9A18A9E74D004D2294 /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
+		BC114E9D18ADC579004D2294 /* bird1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird1@2x.png"; sourceTree = "<group>"; };
+		BC114E9E18ADC579004D2294 /* bird2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird2@2x.png"; sourceTree = "<group>"; };
+		BC114E9F18ADC579004D2294 /* floor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "floor@2x.png"; sourceTree = "<group>"; };
+		BC114EA018ADC579004D2294 /* pipe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pipe@2x.png"; sourceTree = "<group>"; };
+		BC114EA118ADC579004D2294 /* sky@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sky@2x.png"; sourceTree = "<group>"; };
+		BC114EA318ADC579004D2294 /* Fipps-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fipps-Regular.otf"; sourceTree = "<group>"; };
+		BC114EA518ADC579004D2294 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BC114EA618ADC579004D2294 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		BC114EA818ADC579004D2294 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
+		BC114EA918ADC579004D2294 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
+		BC114EAA18ADC579004D2294 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
+		BC114EAB18ADC579004D2294 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		BC114EAC18ADC579004D2294 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		BC114EAD18ADC579004D2294 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		BC114EAE18ADC579004D2294 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
+		BC114EAF18ADC579004D2294 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
+		BC114EB018ADC579004D2294 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		BC114EB118ADC579004D2294 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		BC114EB218ADC579004D2294 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		BC114EB318ADC579004D2294 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		BC114EB418ADC579004D2294 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		BC114EB518ADC579004D2294 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		BC114EB618ADC579004D2294 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		BC114EB718ADC579004D2294 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		BC114EB918ADC579004D2294 /* coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coin.wav; sourceTree = "<group>"; };
+		BC114EBA18ADC579004D2294 /* gameover.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameover.wav; sourceTree = "<group>"; };
+		BC114EBB18ADC579004D2294 /* jump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jump.mp3; sourceTree = "<group>"; };
+		BC114EBC18ADC579004D2294 /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
+		BC114ED918ADC661004D2294 /* BGBird.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGBird.h; sourceTree = "<group>"; };
+		BC114EDA18ADC661004D2294 /* BGBird.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGBird.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,7 +262,7 @@
 		BC114C0718A9C28F004D2294 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC114C0618A9C28F004D2294 /* bitbird-ios.app */,
+				BC114C0618A9C28F004D2294 /* Bit Bird.app */,
 				BC114C2118A9C28F004D2294 /* bitbird-iosTests.xctest */,
 			);
 			name = Products;
@@ -453,6 +498,8 @@
 				BC114E8618A9CB05004D2294 /* GameScene.m */,
 				BC114E9018A9D06F004D2294 /* GameOverScene.h */,
 				BC114E9118A9D06F004D2294 /* GameOverScene.m */,
+				BC114ED918ADC661004D2294 /* BGBird.h */,
+				BC114EDA18ADC661004D2294 /* BGBird.m */,
 			);
 			path = game;
 			sourceTree = "<group>";
@@ -478,29 +525,74 @@
 		BC114E8818A9CFED004D2294 /* assets */ = {
 			isa = PBXGroup;
 			children = (
-				BC114E9318A9E64B004D2294 /* sounds */,
-				BC114E8918A9CFED004D2294 /* Art */,
+				BC114E9C18ADC579004D2294 /* art */,
+				BC114EA218ADC579004D2294 /* fonts */,
+				BC114EA418ADC579004D2294 /* launch */,
+				BC114EA718ADC579004D2294 /* logo */,
+				BC114EB818ADC579004D2294 /* sounds */,
 			);
 			path = assets;
 			sourceTree = "<group>";
 		};
-		BC114E8918A9CFED004D2294 /* Art */ = {
+		BC114E9C18ADC579004D2294 /* art */ = {
 			isa = PBXGroup;
 			children = (
-				BC114E8A18A9CFED004D2294 /* bg.png */,
-				BC114E8B18A9CFED004D2294 /* red-missile.png */,
-				BC114E8C18A9CFED004D2294 /* Spaceship.png */,
+				BC114E9D18ADC579004D2294 /* bird1@2x.png */,
+				BC114E9E18ADC579004D2294 /* bird2@2x.png */,
+				BC114E9F18ADC579004D2294 /* floor@2x.png */,
+				BC114EA018ADC579004D2294 /* pipe@2x.png */,
+				BC114EA118ADC579004D2294 /* sky@2x.png */,
 			);
-			path = Art;
+			path = art;
 			sourceTree = "<group>";
 		};
-		BC114E9318A9E64B004D2294 /* sounds */ = {
+		BC114EA218ADC579004D2294 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				BC114E9418A9E64B004D2294 /* coin.wav */,
-				BC114E9A18A9E74D004D2294 /* jump.wav */,
-				BC114E9518A9E64B004D2294 /* gameover.wav */,
-				BC114E9618A9E64B004D2294 /* jump.mp3 */,
+				BC114EA318ADC579004D2294 /* Fipps-Regular.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		BC114EA418ADC579004D2294 /* launch */ = {
+			isa = PBXGroup;
+			children = (
+				BC114EA518ADC579004D2294 /* Default-568h@2x.png */,
+				BC114EA618ADC579004D2294 /* Default@2x.png */,
+			);
+			path = launch;
+			sourceTree = "<group>";
+		};
+		BC114EA718ADC579004D2294 /* logo */ = {
+			isa = PBXGroup;
+			children = (
+				BC114EA818ADC579004D2294 /* Icon-40.png */,
+				BC114EA918ADC579004D2294 /* Icon-40@2x.png */,
+				BC114EAA18ADC579004D2294 /* Icon-60.png */,
+				BC114EAB18ADC579004D2294 /* Icon-60@2x.png */,
+				BC114EAC18ADC579004D2294 /* Icon-72.png */,
+				BC114EAD18ADC579004D2294 /* Icon-72@2x.png */,
+				BC114EAE18ADC579004D2294 /* Icon-76.png */,
+				BC114EAF18ADC579004D2294 /* Icon-76@2x.png */,
+				BC114EB018ADC579004D2294 /* Icon-Small-50.png */,
+				BC114EB118ADC579004D2294 /* Icon-Small-50@2x.png */,
+				BC114EB218ADC579004D2294 /* Icon-Small.png */,
+				BC114EB318ADC579004D2294 /* Icon-Small@2x.png */,
+				BC114EB418ADC579004D2294 /* Icon.png */,
+				BC114EB518ADC579004D2294 /* Icon@2x.png */,
+				BC114EB618ADC579004D2294 /* iTunesArtwork.png */,
+				BC114EB718ADC579004D2294 /* iTunesArtwork@2x.png */,
+			);
+			path = logo;
+			sourceTree = "<group>";
+		};
+		BC114EB818ADC579004D2294 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				BC114EB918ADC579004D2294 /* coin.wav */,
+				BC114EBA18ADC579004D2294 /* gameover.wav */,
+				BC114EBB18ADC579004D2294 /* jump.mp3 */,
+				BC114EBC18ADC579004D2294 /* jump.wav */,
 			);
 			path = sounds;
 			sourceTree = "<group>";
@@ -522,7 +614,7 @@
 			);
 			name = "bitbird-ios";
 			productName = "bitbird-ios";
-			productReference = BC114C0618A9C28F004D2294 /* bitbird-ios.app */;
+			productReference = BC114C0618A9C28F004D2294 /* Bit Bird.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BC114C2018A9C28F004D2294 /* bitbird-iosTests */ = {
@@ -581,15 +673,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC114E8F18A9CFED004D2294 /* Spaceship.png in Resources */,
-				BC114E9818A9E64B004D2294 /* gameover.wav in Resources */,
-				BC114E9918A9E64B004D2294 /* jump.mp3 in Resources */,
-				BC114E8E18A9CFED004D2294 /* red-missile.png in Resources */,
+				BC114ED818ADC579004D2294 /* jump.wav in Resources */,
+				BC114ECD18ADC579004D2294 /* Icon-Small-50.png in Resources */,
+				BC114ED218ADC579004D2294 /* Icon@2x.png in Resources */,
+				BC114EBE18ADC579004D2294 /* bird2@2x.png in Resources */,
+				BC114ECE18ADC579004D2294 /* Icon-Small-50@2x.png in Resources */,
+				BC114EC218ADC579004D2294 /* Fipps-Regular.otf in Resources */,
+				BC114EC418ADC579004D2294 /* Default@2x.png in Resources */,
+				BC114EC818ADC579004D2294 /* Icon-60@2x.png in Resources */,
+				BC114EC318ADC579004D2294 /* Default-568h@2x.png in Resources */,
 				BC114C1418A9C28F004D2294 /* InfoPlist.strings in Resources */,
-				BC114E9718A9E64B004D2294 /* coin.wav in Resources */,
-				BC114E9B18A9E74D004D2294 /* jump.wav in Resources */,
+				BC114ECF18ADC579004D2294 /* Icon-Small.png in Resources */,
+				BC114ED118ADC579004D2294 /* Icon.png in Resources */,
+				BC114EC118ADC579004D2294 /* sky@2x.png in Resources */,
+				BC114EBF18ADC579004D2294 /* floor@2x.png in Resources */,
+				BC114EC718ADC579004D2294 /* Icon-60.png in Resources */,
 				BC114C1C18A9C28F004D2294 /* Images.xcassets in Resources */,
-				BC114E8D18A9CFED004D2294 /* bg.png in Resources */,
+				BC114ECC18ADC579004D2294 /* Icon-76@2x.png in Resources */,
+				BC114ECA18ADC579004D2294 /* Icon-72@2x.png in Resources */,
+				BC114EC018ADC579004D2294 /* pipe@2x.png in Resources */,
+				BC114ECB18ADC579004D2294 /* Icon-76.png in Resources */,
+				BC114ED718ADC579004D2294 /* jump.mp3 in Resources */,
+				BC114EC918ADC579004D2294 /* Icon-72.png in Resources */,
+				BC114EC618ADC579004D2294 /* Icon-40@2x.png in Resources */,
+				BC114EC518ADC579004D2294 /* Icon-40.png in Resources */,
+				BC114ED618ADC579004D2294 /* gameover.wav in Resources */,
+				BC114EBD18ADC579004D2294 /* bird1@2x.png in Resources */,
+				BC114ED418ADC579004D2294 /* iTunesArtwork@2x.png in Resources */,
+				BC114ED518ADC579004D2294 /* coin.wav in Resources */,
+				BC114ED318ADC579004D2294 /* iTunesArtwork.png in Resources */,
+				BC114ED018ADC579004D2294 /* Icon-Small@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +730,7 @@
 				BC114C1618A9C28F004D2294 /* main.m in Sources */,
 				BC114D8918A9C472004D2294 /* wwanconnect.c in Sources */,
 				BC114C1A18A9C28F004D2294 /* BGAppDelegate.m in Sources */,
+				BC114EDB18ADC661004D2294 /* BGBird.m in Sources */,
 				BC114E5018A9C4BF004D2294 /* UILabel+FlexibleHeight.m in Sources */,
 				BC114E4D18A9C4BF004D2294 /* NSString+Additions.m in Sources */,
 				BC114E8718A9CB05004D2294 /* GameScene.m in Sources */,
@@ -755,7 +869,7 @@
 					"$(inherited)",
 					"/Users/kirushanthsakthivetpillai/Documents/Kiru/Work/BitGames/bitbird/bitbird-ios/bitbird-ios/vendor/TestFlight",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bit Bird";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -772,7 +886,7 @@
 					"$(inherited)",
 					"/Users/kirushanthsakthivetpillai/Documents/Kiru/Work/BitGames/bitbird/bitbird-ios/bitbird-ios/vendor/TestFlight",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bit Bird";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

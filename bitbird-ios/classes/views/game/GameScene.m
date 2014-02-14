@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 #import "GameOverScene.h"
+#import "BGBird.h"
 
 static const uint32_t heroCategory =  0x1 << 0;
 static const uint32_t obstacleCategory =  0x1 << 1;
@@ -16,8 +17,10 @@ static const uint32_t pointCategory =  0x1 << 2;
 static const float BG_VELOCITY = 100.0;
 static const float OBJECT_VELOCITY = 170.0;
 
+static const int START_DELAY = 3;
+
 static const float OBSTACLE_TIME_INTERVAL = 0.6;
-static const float FLOOR_HEIGHT = 100.0;
+static const float FLOOR_HEIGHT = 118.0;
 static const float OPENING_HEIGHT = 100.0;
 static const float OPENING_PADDING = 70.0;
 
@@ -36,11 +39,12 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 @implementation GameScene {
 	UIImageView *background;
 	UILabel *scoreboard;
+	UILabel *instructions;
+	UILabel *gameoverText;
 	
 	long score;
 	
-	SKSpriteNode *floor;
-	SKSpriteNode *hero;
+	BGBird *hero;
 	
 	SKAction *actionTouch;
 	SKAction *actionDeath;
@@ -77,13 +81,26 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 	scoreboard = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 150)];
 	scoreboard.textAlignment = UITextAlignmentCenter;
 	scoreboard.textColor = [UIColor blackColor];
-	scoreboard.font = [UIFont systemFontOfSize:30.0f];
+	scoreboard.font = [UIFont fontWithName:@"Fipps-Regular" size:35];
 	scoreboard.text = @"0";
 	[self.view addSubview:scoreboard];
 	
-	[self initalizingScrollingBackground];
-	[self addHero];
+	instructions = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+	instructions.textAlignment = UITextAlignmentCenter;
+	instructions.textColor = [UIColor blackColor];
+	instructions.font = [UIFont fontWithName:@"Fipps-Regular" size:20];
+	instructions.text = @"TAP to START";
+	[self.view addSubview:instructions];
+	
+	gameoverText = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+	gameoverText.textAlignment = UITextAlignmentCenter;
+	gameoverText.textColor = [UIColor blackColor];
+	gameoverText.font = [UIFont fontWithName:@"Fipps-Regular" size:30];
+	gameoverText.text = @"GAME OVER";
+	
+	[self addSky];
 	[self addFloor];
+	[self addHero];
 	
 	self.physicsWorld.contactDelegate = self;
 	self.physicsWorld.gravity = CGVectorMake(0, 0);
@@ -94,12 +111,11 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 -(void)addHero
 {
 	//initalizing spaceship node
-	hero = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-	[hero setScale:0.25];
-	hero.zRotation = - M_PI / 2;
+	hero = [BGBird createBird];
+	[hero startAnimation];
     
 	//Adding SpriteKit physicsBody for collision detection
-	hero.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:hero.size];
+	hero.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:(hero.size.width / 2) - 3];
 	hero.physicsBody.categoryBitMask = heroCategory;
 	hero.physicsBody.dynamic = YES;
 	hero.physicsBody.contactTestBitMask = obstacleCategory;
@@ -112,14 +128,23 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 	[self addChild:hero];
 }
 
+- (void)rotateHero
+{
+	float limit = 0.15;
+ 	float normalizedSpeed = hero.physicsBody.velocity.dy / 1000;
+	normalizedSpeed = MIN(limit, normalizedSpeed);
+	normalizedSpeed = MAX(-limit, normalizedSpeed);
+	hero.zRotation = M_PI * normalizedSpeed;
+}
+
 -(void)addObstacle
 {
     //initalizing spaceship node
-    SKSpriteNode *top = [SKSpriteNode spriteNodeWithColor:[UIColor yellowColor] size:CGSizeMake(50, 1000)];
-    SKSpriteNode *bottom = [SKSpriteNode spriteNodeWithColor:[UIColor yellowColor] size:CGSizeMake(50, 1000)];
-    SKSpriteNode *point = [SKSpriteNode spriteNodeWithColor:[UIColor grayColor] size:CGSizeMake(50, OPENING_HEIGHT)];
+    SKSpriteNode *top = [SKSpriteNode spriteNodeWithImageNamed:@"pipe.png"];
+    SKSpriteNode *bottom = [SKSpriteNode spriteNodeWithImageNamed:@"pipe.png"];
+    SKSpriteNode *point = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(50, OPENING_HEIGHT)];
     
-	[bottom setZRotation:2 * M_PI];
+	[top setZRotation:M_PI];
 	
 	top.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:top.size];
 	bottom.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bottom.size];
@@ -150,22 +175,31 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 
 - (void)addFloor
 {
-	floor = [SKSpriteNode spriteNodeWithColor:[UIColor brownColor] size:CGSizeMake(320, FLOOR_HEIGHT)];
-//    item = [SKSpriteNode spriteNodeWithImageNamed:@"red-missile.png"];
-    
-    //Adding SpriteKit physicsBody for collision detection
-    floor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:floor.size];
-    floor.physicsBody.categoryBitMask = obstacleCategory;
-    floor.physicsBody.dynamic = NO;
-    floor.physicsBody.contactTestBitMask = heroCategory;
-    floor.physicsBody.collisionBitMask = 0;
-    floor.physicsBody.usesPreciseCollisionDetection = YES;
-	floor.zPosition = 101;
-    floor.name = @"floor";
+	for (int i = 0; i < 2; i++) {
+		SKSpriteNode *floor = [SKSpriteNode spriteNodeWithImageNamed:@"floor.png"];
+		
+		floor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:floor.size];
+		floor.physicsBody.categoryBitMask = obstacleCategory;
+		floor.physicsBody.dynamic = NO;
+		floor.physicsBody.contactTestBitMask = heroCategory;
+		floor.physicsBody.collisionBitMask = 0;
+		floor.physicsBody.usesPreciseCollisionDetection = YES;
+		floor.zPosition = 101;
+		floor.name = @"floor";
+		floor.anchorPoint = CGPointMake(0, 0.5);
+		floor.position = CGPointMake(i * floor.size.width, floor.size.height / 2);
+		
+		[self addChild:floor];
+	}
+}
 
-    floor.position = CGPointMake(floor.size.width / 2, floor.size.height / 2);
-	
-    [self addChild:floor];
+- (void)addSky
+{
+	SKSpriteNode *item = [SKSpriteNode spriteNodeWithImageNamed:@"sky.png"];
+	item.zPosition = 90;
+	item.anchorPoint = CGPointMake(0, 0);
+	item.position = CGPointMake(0, self.frame.size.height - item.size.height);
+	[self addChild:item];
 }
 
 - (void)moveObstacle
@@ -187,23 +221,12 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
     }
 }
 
--(void)initalizingScrollingBackground
+- (void)moveFloor
 {
-    for (int i = 0; i < 2; i++) {
-        SKSpriteNode *bg = [SKSpriteNode spriteNodeWithImageNamed:@"bg"];
-        bg.position = CGPointMake(i * bg.size.width, 0);
-        bg.anchorPoint = CGPointZero;
-        bg.name = @"bg";
-        [self addChild:bg];
-    }
-}
-
-- (void)moveBg
-{
-    [self enumerateChildNodesWithName:@"bg" usingBlock: ^(SKNode *node, BOOL *stop)
+    [self enumerateChildNodesWithName:@"floor" usingBlock: ^(SKNode *node, BOOL *stop)
      {
          SKSpriteNode * bg = (SKSpriteNode *) node;
-         CGPoint bgVelocity = CGPointMake(-BG_VELOCITY, 0);
+         CGPoint bgVelocity = CGPointMake(-OBJECT_VELOCITY, 0);
          CGPoint amtToMove = CGPointMultiplyScalar(bgVelocity,_dt);
          bg.position = CGPointAdd(bg.position, amtToMove);
          
@@ -241,14 +264,19 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
     _lastUpdateTime = currentTime;
     
 	if ([self isGameRunning]) {
-		if( currentTime - _lastObstacleAdded > OBSTACLE_TIME_INTERVAL)
+		
+		if (_lastObstacleAdded == 0)
+			_lastObstacleAdded = currentTime + START_DELAY;
+		
+		if(currentTime - _lastObstacleAdded > OBSTACLE_TIME_INTERVAL)
 		{
 			_lastObstacleAdded = currentTime + OBSTACLE_TIME_INTERVAL;
 			[self addObstacle];
 		}
 		
-		[self moveBg];
+		[self moveFloor];
 		[self moveObstacle];
+		[self rotateHero];
 	}
 }
 
@@ -284,6 +312,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 {
 	gameStarted = YES;
 	self.physicsWorld.gravity = CGVectorMake(0,-4);
+	[instructions removeFromSuperview];
 }
 
 - (void)finishGame
@@ -295,6 +324,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 	}];
 	self.physicsWorld.gravity = CGVectorMake(0, 0);
 	hero.physicsBody.velocity = CGVectorMake(0, 0);
+	[self.view addSubview:gameoverText];
 	gameOver = YES;
 }
 

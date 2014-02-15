@@ -635,6 +635,7 @@
 				BC114C0218A9C28F004D2294 /* Sources */,
 				BC114C0318A9C28F004D2294 /* Frameworks */,
 				BC114C0418A9C28F004D2294 /* Resources */,
+				BCE7FB5B18B0274500C345A6 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -745,6 +746,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BCE7FB5B18B0274500C345A6 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "APP_ID=\"52ffeda2a7928a427b000002\"\nAPI_KEY=\"ganxtokj6ydlyrp0oc9n35siu7aitbqb\"\nsource ${SRCROOT}/CrittercismSDK/dsym_upload.sh";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BC114C0218A9C28F004D2294 /* Sources */ = {

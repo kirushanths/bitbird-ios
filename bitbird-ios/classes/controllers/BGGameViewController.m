@@ -9,10 +9,9 @@
 #import "BGGameViewController.h"
 #import "GameScene.h"
 
-@interface BGGameViewController ()
+@interface BGGameViewController () <ADBannerViewDelegate>
 
-@property (nonatomic, assign) int score;
-@property (nonatomic, assign) int attempts;
+@property (nonatomic, strong) ADBannerView *bannerView;
 
 @end
 
@@ -36,12 +35,13 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
+	self.canDisplayBannerAds = YES;
 }
 
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    
-    SKView * skView = (SKView *) self.view;
+	
+	SKView * skView = (SKView *) self.originalContentView;
     
     if (!skView.scene) {
         // Create and configure the scene.
@@ -51,11 +51,47 @@
         // Present the scene.
         [skView presentScene:scene];
     }
+	
+	[self showAdvert];
 }
 
 -(BOOL)prefersStatusBarHidden{
     return YES;
 }
 
+- (void)showAdvert
+{
+	if (!self.bannerView) {
+		self.bannerView = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+		self.bannerView.delegate = self;
+		[self.view addSubview:self.bannerView];
+	}
+	
+	self.bannerView.frame = CGRectMake(0, self.view.bounds.size.height - 50, 320, 50);
+}
+
+- (void)hideAdvert
+{
+	[self.bannerView removeFromSuperview];
+	self.bannerView.delegate = nil;
+	self.bannerView = nil;
+}
+
+#pragma mark - Ad Delegate
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+	NSLog(@"Banner did Load");
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error;
+{
+	NSLog(@"Banner Error %@", [error localizedDescription]);
+}
+
+- (void)bannerViewActionDidFinish:(ADBannerView *)banner
+{
+	NSLog(@"Banner did Finish");
+}
 
 @end

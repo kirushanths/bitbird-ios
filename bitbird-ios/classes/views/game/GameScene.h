@@ -10,6 +10,6 @@
 #import <SpriteKit/SpriteKit.h>
 #import <iAd/iAd.h>
 
-@interface GameScene : SKScene <SKPhysicsContactDelegate, ADBannerViewDelegate>
+@interface GameScene : SKScene <SKPhysicsContactDelegate>
 
 @end

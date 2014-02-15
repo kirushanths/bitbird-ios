@@ -123,7 +123,7 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 	
 	float buttonHeight = 60;
 	replayButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	replayButton.frame = CGRectMake(0, self.frame.size.height - buttonHeight, self.frame.size.width, buttonHeight);
+	replayButton.frame = CGRectMake(0, self.frame.size.height - buttonHeight - 50, self.frame.size.width, buttonHeight);
 	replayButton.backgroundColor = SE_COLOR_BLUE;
 	[replayButton.titleLabel setFont:[UIFont fontWithName:@"Fipps-Regular" size:18]];
 	[replayButton setTitle:@"Play Again" forState:UIControlStateNormal];
@@ -374,8 +374,6 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 	}
 	
 	highestScore.text = [NSString stringWithFormat:@"High Score: %ld", highscore];
-	
-	[self showAdvert];
 	gameOver = YES;
 }
 
@@ -402,31 +400,6 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 - (BOOL)isGameRunning
 {
 	return gameStarted && !gameOver;
-}
-
-- (void)showAdvert
-{
-	ADBannerView *bannerAd = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
-	bannerAd.delegate = self;
-	[self.view addSubview:bannerAd];
-}
-
-#pragma mark - Ad Delegate
-
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner
-{
-	NSLog(@"Banner did Load");
-}
-
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error;
-{
-	NSLog(@"Banner Error %@", [error localizedDescription]);
-}
-
-- (void)bannerViewActionDidFinish:(ADBannerView *)banner
-{
-	NSLog(@"Banner did Finish");
-	[banner removeFromSuperview];
 }
 
 @end

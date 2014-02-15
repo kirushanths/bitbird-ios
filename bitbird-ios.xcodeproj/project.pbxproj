@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BC114C0A18A9C28F004D2294 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114C0918A9C28F004D2294 /* Foundation.framework */; };
-		BC114C0C18A9C28F004D2294 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114C0B18A9C28F004D2294 /* CoreGraphics.framework */; };
 		BC114C0E18A9C28F004D2294 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114C0D18A9C28F004D2294 /* UIKit.framework */; };
 		BC114C1418A9C28F004D2294 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC114C1218A9C28F004D2294 /* InfoPlist.strings */; };
 		BC114C1618A9C28F004D2294 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114C1518A9C28F004D2294 /* main.m */; };
@@ -32,18 +31,8 @@
 		BC114E4F18A9C4BF004D2294 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E3C18A9C4BF004D2294 /* UIImage+Additions.m */; };
 		BC114E5018A9C4BF004D2294 /* UILabel+FlexibleHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E3E18A9C4BF004D2294 /* UILabel+FlexibleHeight.m */; };
 		BC114E5118A9C4BF004D2294 /* UILabel+LatoFont.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E4018A9C4BF004D2294 /* UILabel+LatoFont.m */; };
-		BC114E5A18A9C5DD004D2294 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E5218A9C5DD004D2294 /* Accelerate.framework */; };
-		BC114E5B18A9C5DD004D2294 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E5318A9C5DD004D2294 /* Accounts.framework */; };
-		BC114E5C18A9C5DD004D2294 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E5418A9C5DD004D2294 /* AdSupport.framework */; };
-		BC114E5D18A9C5DD004D2294 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E5518A9C5DD004D2294 /* AudioToolbox.framework */; };
-		BC114E5F18A9C5DD004D2294 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E5718A9C5DD004D2294 /* AVFoundation.framework */; };
 		BC114E6018A9C5DD004D2294 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E5818A9C5DD004D2294 /* CFNetwork.framework */; };
-		BC114E6118A9C5DD004D2294 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E5918A9C5DD004D2294 /* CoreAudio.framework */; };
-		BC114E6918A9C607004D2294 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E6218A9C607004D2294 /* CoreImage.framework */; };
-		BC114E6A18A9C607004D2294 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E6318A9C607004D2294 /* CoreText.framework */; };
 		BC114E6B18A9C607004D2294 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E6418A9C607004D2294 /* iAd.framework */; };
-		BC114E6C18A9C607004D2294 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E6518A9C607004D2294 /* ImageIO.framework */; };
-		BC114E6D18A9C607004D2294 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E6618A9C607004D2294 /* MobileCoreServices.framework */; };
 		BC114E6E18A9C607004D2294 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E6718A9C607004D2294 /* QuartzCore.framework */; };
 		BC114E6F18A9C607004D2294 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114E6818A9C607004D2294 /* Security.framework */; };
 		BC114E7418A9C692004D2294 /* KSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114E7118A9C692004D2294 /* KSBaseViewController.m */; };
@@ -88,6 +77,9 @@
 		BC114EE218ADDA8D004D2294 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114EE018ADDA8D004D2294 /* iRate.m */; };
 		BC114EE618ADE711004D2294 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC114EE518ADE711004D2294 /* StoreKit.framework */; };
 		BC114EE918ADF5AB004D2294 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC114EE818ADF5AB004D2294 /* GameManager.m */; };
+		BCE7FB5718B025E500C345A6 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = BCE7FB5518B025E500C345A6 /* dsym_upload.sh */; };
+		BCE7FB5818B025E500C345A6 /* libCrittercism_v4_3_1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE7FB5618B025E500C345A6 /* libCrittercism_v4_3_1.a */; };
+		BCE7FB5A18B0262F00C345A6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE7FB5918B0262F00C345A6 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -217,6 +209,12 @@
 		BC114EE518ADE711004D2294 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BC114EE718ADF5AB004D2294 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		BC114EE818ADF5AB004D2294 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
+		BCE7FB5218B025E500C345A6 /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
+		BCE7FB5318B025E500C345A6 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
+		BCE7FB5418B025E500C345A6 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
+		BCE7FB5518B025E500C345A6 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
+		BCE7FB5618B025E500C345A6 /* libCrittercism_v4_3_1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_3_1.a; sourceTree = "<group>"; };
+		BCE7FB5918B0262F00C345A6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,23 +222,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE7FB5A18B0262F00C345A6 /* SystemConfiguration.framework in Frameworks */,
+				BCE7FB5818B025E500C345A6 /* libCrittercism_v4_3_1.a in Frameworks */,
 				BC114EE618ADE711004D2294 /* StoreKit.framework in Frameworks */,
 				BC114E8418A9C99F004D2294 /* SpriteKit.framework in Frameworks */,
-				BC114E6918A9C607004D2294 /* CoreImage.framework in Frameworks */,
-				BC114E6A18A9C607004D2294 /* CoreText.framework in Frameworks */,
 				BC114E6B18A9C607004D2294 /* iAd.framework in Frameworks */,
-				BC114E6C18A9C607004D2294 /* ImageIO.framework in Frameworks */,
-				BC114E6D18A9C607004D2294 /* MobileCoreServices.framework in Frameworks */,
 				BC114E6E18A9C607004D2294 /* QuartzCore.framework in Frameworks */,
 				BC114E6F18A9C607004D2294 /* Security.framework in Frameworks */,
-				BC114E5A18A9C5DD004D2294 /* Accelerate.framework in Frameworks */,
-				BC114E5B18A9C5DD004D2294 /* Accounts.framework in Frameworks */,
-				BC114E5C18A9C5DD004D2294 /* AdSupport.framework in Frameworks */,
-				BC114E5D18A9C5DD004D2294 /* AudioToolbox.framework in Frameworks */,
-				BC114E5F18A9C5DD004D2294 /* AVFoundation.framework in Frameworks */,
 				BC114E6018A9C5DD004D2294 /* CFNetwork.framework in Frameworks */,
-				BC114E6118A9C5DD004D2294 /* CoreAudio.framework in Frameworks */,
-				BC114C0C18A9C28F004D2294 /* CoreGraphics.framework in Frameworks */,
 				BC114C0E18A9C28F004D2294 /* UIKit.framework in Frameworks */,
 				BC114C0A18A9C28F004D2294 /* Foundation.framework in Frameworks */,
 				BC114E1518A9C472004D2294 /* libTestFlight.a in Frameworks */,
@@ -282,6 +271,7 @@
 		BC114C0818A9C28F004D2294 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BCE7FB5918B0262F00C345A6 /* SystemConfiguration.framework */,
 				BC114EE518ADE711004D2294 /* StoreKit.framework */,
 				BC114E8318A9C99F004D2294 /* SpriteKit.framework */,
 				BC114E6218A9C607004D2294 /* CoreImage.framework */,
@@ -353,6 +343,7 @@
 		BC114C5418A9C471004D2294 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				BCE7FB5118B025E500C345A6 /* CrittercismSDK */,
 				BC114EDD18ADDA8D004D2294 /* iRate */,
 				BC114C5518A9C471004D2294 /* AppleSampleCode */,
 				BC114C5A18A9C471004D2294 /* GoogleToolbox */,
@@ -622,6 +613,18 @@
 			path = iRate;
 			sourceTree = "<group>";
 		};
+		BCE7FB5118B025E500C345A6 /* CrittercismSDK */ = {
+			isa = PBXGroup;
+			children = (
+				BCE7FB5218B025E500C345A6 /* CRFilter.h */,
+				BCE7FB5318B025E500C345A6 /* Crittercism.h */,
+				BCE7FB5418B025E500C345A6 /* CrittercismDelegate.h */,
+				BCE7FB5518B025E500C345A6 /* dsym_upload.sh */,
+				BCE7FB5618B025E500C345A6 /* libCrittercism_v4_3_1.a */,
+			);
+			path = CrittercismSDK;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -722,6 +725,7 @@
 				BC114EC918ADC579004D2294 /* Icon-72.png in Resources */,
 				BC114EC618ADC579004D2294 /* Icon-40@2x.png in Resources */,
 				BC114EC518ADC579004D2294 /* Icon-40.png in Resources */,
+				BCE7FB5718B025E500C345A6 /* dsym_upload.sh in Resources */,
 				BC114ED618ADC579004D2294 /* gameover.wav in Resources */,
 				BC114EBD18ADC579004D2294 /* bird1@2x.png in Resources */,
 				BC114EE118ADDA8D004D2294 /* iRate.bundle in Resources */,
@@ -898,6 +902,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/kirushanthsakthivetpillai/Documents/Kiru/Work/BitGames/bitbird/bitbird-ios/bitbird-ios/vendor/TestFlight",
+					"/Users/kirushanthsakthivetpillai/Documents/Kiru/Work/BitGames/bitbird/bitbird-ios/bitbird-ios/vendor/CrittercismSDK",
 				);
 				PRODUCT_NAME = "Bit Bird";
 				PROVISIONING_PROFILE = "5DBC8CD0-6F7B-44A1-BEC2-37F85EF0B882";
@@ -918,6 +923,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/kirushanthsakthivetpillai/Documents/Kiru/Work/BitGames/bitbird/bitbird-ios/bitbird-ios/vendor/TestFlight",
+					"/Users/kirushanthsakthivetpillai/Documents/Kiru/Work/BitGames/bitbird/bitbird-ios/bitbird-ios/vendor/CrittercismSDK",
 				);
 				PRODUCT_NAME = "Bit Bird";
 				PROVISIONING_PROFILE = "ADAB66DC-B393-410C-B46D-A037EFDCA663";

@@ -9,6 +9,7 @@
 #import "BGAppDelegate.h"
 #import "BGGameViewController.h"
 #import "iRate.h"
+#import "Crittercism.h"
 
 @implementation BGAppDelegate
 
@@ -20,6 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	[Crittercism enableWithAppID: @"52ffeda2a7928a427b000002"];
 	BGGameViewController *gameVC = [[BGGameViewController alloc] init];
 	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

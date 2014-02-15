@@ -10,7 +10,7 @@
 #import "KeychainItemWrapper.h"
 #import "KSMacros.h"
 
-#define kKeyChainStoreIdentifier @"AppKeyStore"
+#define kKeyChainStoreIdentifier @"BitBirdKeyStore"
 
 @implementation GameManager
 

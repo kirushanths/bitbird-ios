@@ -760,7 +760,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "APP_ID=\"52ffeda2a7928a427b000002\"\nAPI_KEY=\"ganxtokj6ydlyrp0oc9n35siu7aitbqb\"\nsource ${SRCROOT}/CrittercismSDK/dsym_upload.sh";
+			shellScript = "APP_ID=\"52ffeda2a7928a427b000002\"\nAPI_KEY=\"ganxtokj6ydlyrp0oc9n35siu7aitbqb\"\nsource ${SRCROOT}/bitbird-ios/vendor/CrittercismSDK/dsym_upload.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 
